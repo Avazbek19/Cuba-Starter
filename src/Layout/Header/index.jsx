@@ -3,7 +3,6 @@ import { Form, Row } from 'reactstrap';
 import { X } from 'react-feather';
 import { Link } from 'react-router-dom';
 import CustomContext from '../../_helper/Customizer';
-import Leftbar from './Leftbar/index';
 import RightHeader from './RightHeader/index';
 import { MENUITEMS } from '../Sidebar/Menu';
 import { Loading } from '../../Constant';
@@ -143,7 +142,6 @@ const Header = () => {
               </div>
             </div>
           </Form>
-          <Leftbar />
           <RightHeader />
         </Row>
       </div>
