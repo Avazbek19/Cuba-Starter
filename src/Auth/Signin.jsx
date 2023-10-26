@@ -17,7 +17,7 @@ const Logins = () => {
         <Col xs='12'>
           <div className='login-card'>
             <div className='login-main login-tab'>
-              <NavAuth callbackNav={callbackNav} selected={selected} />
+              {/* <NavAuth callbackNav={callbackNav} selected={selected} /> */}
               <TabContent activeTab={selected} className='content-login'>
                 <TabPane className='fade show' tabId={selected === 'simpleLogin' ? 'simpleLogin' : 'jwt'}>
                   <LoginTab selected={selected} />

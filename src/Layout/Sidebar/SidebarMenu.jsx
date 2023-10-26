@@ -40,14 +40,7 @@ const SidebarMenu = ({ setMainMenu, props, sidebartoogle, setNavActive, activeCl
       <div className="left-arrow" onClick={scrollToLeft}>
         <ArrowLeft />
       </div>
-      <div
-        id="sidebar-menu"
-        style={
-          wrapper.split(' ').includes('horizontal-wrapper')
-            ? { marginLeft: margin + 'px' }
-            : { margin: '0px' }
-        }
-      >
+      <div id="sidebar-menu" style={ wrapper.split(' ').includes('horizontal-wrapper') ? { marginLeft: margin + 'px' } : { margin: '0px' }}>
         <ul className="sidebar-links custom-scrollbar">
           <li className="back-btn">
             <div className="mobile-back text-end">

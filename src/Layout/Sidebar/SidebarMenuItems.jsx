@@ -61,14 +61,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
           {Item.Items.map((menuItem, i) => (
             <li className='sidebar-list' key={i}>
               {menuItem.type === 'sub' ? (
-                <a
-                  href='javascript'
-                  className={`sidebar-link sidebar-title ${CurrentPath.includes(menuItem.title.toLowerCase()) ? 'active' : ''} ${menuItem.active && 'active'}`}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    setNavActive(menuItem);
-                    activeClass(menuItem.active);
-                  }}>
+                <a href='javascript' className={`sidebar-link sidebar-title ${CurrentPath.includes(menuItem.title.toLowerCase()) ? 'active' : ''} ${menuItem.active && 'active'}`} onClick={(event) => {event.preventDefault(); setNavActive(menuItem); activeClass(menuItem.active);}}>
                   <SvgIcon className='stroke-icon' iconId={`stroke-${menuItem.icon}`} />
                   <SvgIcon className='fill-icon' iconId={`fill-${menuItem.icon}`} />
                   <span>{t(menuItem.title)}</span>
@@ -96,14 +89,7 @@ const SidebarMenuItems = ({ setMainMenu, sidebartoogle, setNavActive, activeClas
                     return (
                       <li key={index}>
                         {childrenItem.type === 'sub' ? (
-                          <a
-                            href='javascript'
-                            className={`${CurrentPath.includes(childrenItem?.title?.toLowerCase()) ? 'active' : ''}`}
-                            // className={`${childrenItem.active ? 'active' : ''}`}
-                            onClick={(event) => {
-                              event.preventDefault();
-                              toggletNavActive(childrenItem);
-                            }}>
+                          <a href='javascript' className={`${CurrentPath.includes(childrenItem?.title?.toLowerCase()) ? 'active' : ''}`} onClick={(event) => { event.preventDefault(); toggletNavActive(childrenItem);}}>
                             {t(childrenItem.title)}
                             <span className='sub-arrow'>
                               <i className='fa fa-chevron-right'></i>

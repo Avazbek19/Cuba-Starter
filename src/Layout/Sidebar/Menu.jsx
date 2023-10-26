@@ -15,8 +15,8 @@ export const MENUITEMS = [
       },
       {
         title: 'Colors',
-        icon: 'train-steam',
-        type: 'sub',
+        icon: 'form',
+        type: 'sub', 
         active: false,
         children: [
           { path: `${process.env.PUBLIC_URL}/colors/colorr`, title: 'Color1', type: 'link'},
