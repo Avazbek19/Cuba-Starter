@@ -1,0 +1,9 @@
+.switch.on {
+    background-color: #4CAF50;
+    /* Yoqilgan holat rangi */
+}
+
+.switch.off {
+    background-color: #ccc;
+    /* O'chirilgan holat rangi */
+}

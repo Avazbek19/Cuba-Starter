@@ -1,7 +1,6 @@
 .title_form {
     font-weight: 700;
     font-size: 20px;
-    color: white;
 }
 
 .text_for_form {
@@ -10,24 +9,6 @@
 
 .form_new_employee {
     margin: 50px 0px;
-}
-
-.inputs {
-    margin-top: 5px;
-    width: 100%;
-    padding: 5px;
-    background: #393d49;
-    border: none;
-    color: #787c88;
-}
-
-.selects {
-    margin-top: 5px;
-    width: 100%;
-    padding: 5px;
-    background: #393d49;
-    border: none;
-    color: #787c88;
 }
 
 .icon_x {

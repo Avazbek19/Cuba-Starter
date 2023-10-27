@@ -22,6 +22,15 @@ export const MENUITEMS = [
           { path: `${process.env.PUBLIC_URL}/colors/colorr`, title: 'Color1', type: 'link'},
           { path: `${process.env.PUBLIC_URL}/colors/colorg`, title: 'Color2', type: 'link'},
         ]
+      },
+      {
+        title: 'Settings',
+        icon: 'builders',
+        type: 'sub',
+        active: false,
+        children: [
+          { path: `${process.env.PUBLIC_URL}/setting/setting-customize`, title: 'Customize Settings', type : 'link'},
+        ]
       }
     ],
   },
