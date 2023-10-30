@@ -8,6 +8,7 @@ import GreenColor from '../Components/Colors/green'
 
 // //Settings
 import Settings from '../Components/Settings/Settings';
+import JsonSave from '../Components/JsonSaver/JsonSave';
 
 export const routes = [
   // //page
@@ -17,5 +18,6 @@ export const routes = [
   { path: `${process.env.PUBLIC_URL}/colors/colorr/:layout`, Component: <RedColor/>},
   { path: `${process.env.PUBLIC_URL}/colors/colorg/:layout`, Component: <GreenColor/>},
 
-  { path: `${process.env.PUBLIC_URL}/setting/setting-customize/:layout`, Component : <Settings/>}
+  { path: `${process.env.PUBLIC_URL}/setting/setting-customize/:layout`, Component : <Settings/>},
+  { path: `${process.env.PUBLIC_URL}/setting/json-saver/:layout`, Component : <JsonSave/>}
 ];
