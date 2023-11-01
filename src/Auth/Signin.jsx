@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, TabContent, TabPane } from 'reactstrap';
-import NavAuth from './Nav';
 import LoginTab from './Tabs/LoginTab';
 import AuthTab from './Tabs/AuthTab';
 

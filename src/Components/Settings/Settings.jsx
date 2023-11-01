@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Input, Label, Media } from 'reactstrap';
-
 import './settings.css'
 import Themecustomizer from '../../Layout/ThemeCustomizer';
+
 
 export default function Settings() {
   const [toggle, setToggle] = useState(false)

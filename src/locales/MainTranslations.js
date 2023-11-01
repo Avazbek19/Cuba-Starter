@@ -1,0 +1,1 @@
+export const MainChangeLetter = ["General", "Settings", "Customize Settings", "Add Language"]

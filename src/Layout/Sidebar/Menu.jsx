@@ -30,7 +30,7 @@ export const MENUITEMS = [
         active: false,
         children: [
           { path: `${process.env.PUBLIC_URL}/setting/setting-customize`, title: 'Customize Settings', type : 'link'},
-          { path: `${process.env.PUBLIC_URL}/setting/json-saver`, title: 'Json Saver', type: 'link'},
+          { path: `${process.env.PUBLIC_URL}/setting/json-saver`, title: 'Add Language', type: 'link'},
         ]
       }
     ],
