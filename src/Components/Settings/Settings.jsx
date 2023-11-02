@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Label, Media } from 'reactstrap';
+import { Breadcrumbs } from '../../AbstractElements';
 import './settings.css'
 import Themecustomizer from '../../Layout/ThemeCustomizer';
 
@@ -13,6 +14,7 @@ export default function Settings() {
 
   return (
     <section>
+      <Breadcrumbs mainTitle='Settings' parent='Settings' title='Customize Settings' />
       <div className='p-2'>
         <Media>
           <Label className="col-form-label m-r-10">Theme Customize</Label>
@@ -26,8 +28,8 @@ export default function Settings() {
       </div>
       <div>
         {
-          toggle ? <Themecustomizer/>
-          : ''
+          toggle ? <Themecustomizer />
+            : ''
         }
       </div>
     </section>

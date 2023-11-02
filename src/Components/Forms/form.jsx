@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import {Breadcrumbs} from '../../AbstractElements'
 import './form.css'
 
 export default function Form() {
@@ -19,6 +20,7 @@ export default function Form() {
     const place_of_living = useRef()
     const phone_number = useRef()
     const position = useRef()
+    const checkBox = useRef()
 
     function send(e) {
         e.preventDefault()
@@ -38,8 +40,10 @@ export default function Form() {
             place_of_registration: place_of_registration.current.value,
             place_of_living: place_of_living.current.value,
             phone_number: phone_number.current.value,
-            position: position.current.value
+            position: position.current.value,
+            checkBox: checkBox.current.checked
         }
+        
         employee.push(newEmployee)
         console.log(employee);
     }
@@ -47,6 +51,7 @@ export default function Form() {
 
     return (
         <section>
+            <Breadcrumbs mainTitle='Sample-form' parent='Pages' title='Sample form'/>
             <div className='d-flex justify-content-between p-2 title_border'>
                 <div>
                     <p className='title_form'>Форма создание нового приказа</p>
@@ -132,6 +137,10 @@ export default function Form() {
                             <option value="2">2</option>
                             <option value="3">3</option>
                         </select>
+                    </div>
+                    <div className='col-6 col-sm-6 col-md-4 col-lg-3'>
+                        <p className='m-0 text_for_form'>Создать аккаунт</p>
+                        <input ref={checkBox} type="checkbox" name="" id="" />
                     </div>
                 </div>
                 <button type='submit' className='btn btn-danger ms-2 mt-2'>Send</button>
