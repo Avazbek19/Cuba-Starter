@@ -4,6 +4,7 @@ import { X } from 'react-feather';
 import { Link } from 'react-router-dom';
 import CustomContext from '../../_helper/Customizer';
 import RightHeader from './RightHeader/index';
+import Leftbar from './Leftbar/index'
 import { MENUITEMS } from '../Sidebar/Menu';
 import { Loading } from '../../Constant';
 import SvgIcon from '../../Components/Common/Component/SvgIcon';
@@ -86,9 +87,9 @@ const Header = () => {
     setSearchResult(true);
     document.querySelector('.Typeahead-menu').classList.add('is-open');
     document.body.classList.add(`${layout_type}`);
-    // if (document.body.classList.value !== 'box-layout') {
-    //   document.body.classList.add('offcanvas');
-    // }
+    if (document.body.classList.value !== 'box-layout') {
+      document.body.classList.add('offcanvas');
+    }
   };
 
   const removeFix = () => {
@@ -142,6 +143,7 @@ const Header = () => {
               </div>
             </div>
           </Form>
+          <Leftbar />
           <RightHeader />
         </Row>
       </div>

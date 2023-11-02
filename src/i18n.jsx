@@ -13,9 +13,6 @@ i18n
             ru: {
                 translation: require('./locales/translations/ru.json')
             },
-            uz: {
-                translation: require('./locales/translations/uz.json')
-            }
         },
         supportedLngs: ['en', 'ru', 'uz'],
         lng: "en",

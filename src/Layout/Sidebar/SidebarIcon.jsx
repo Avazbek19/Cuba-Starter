@@ -8,7 +8,7 @@ const SidebarIcon = () => {
   return (
     <div className="logo-icon-wrapper">
       <Link to={`${process.env.PUBLIC_URL}/pages/sample-page/${layoutURL}`}>
-        <img style={{width: '300px' }} src={ cubaimg } alt="" />
+        <img style={{width: '30px', height: '30px', objectFit: 'cover' }} src={ cubaimg } alt="" />
       </Link>
     </div>
   );

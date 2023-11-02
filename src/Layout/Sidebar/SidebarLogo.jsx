@@ -20,11 +20,11 @@ const SidebarLogo = () => {
     <div className='logo-wrapper'>
       {layout1 !== 'compact-wrapper dark-sidebar' && layout1 !== 'compact-wrapper color-sidebar' && mixLayout ? (
         <Link to={`${process.env.PUBLIC_URL}/pages/sample-page/${layoutURL}`}>
-          <Image attrImage={{ className: 'img-fluid w-75 d-inline', src: `${StarLabIcon}`, alt: '' }} />
+          <Image attrImage={{ className: 'img-fluid w-50 d-inline', src: `${StarLabIcon}`, alt: '' }} />
         </Link>
       ) : (
         <Link to={`${process.env.PUBLIC_URL}/pages/sample-page/${layoutURL}`}>
-          <Image attrImage={{ className: 'img-fluid w-75 d-inline', src: `${require('../../assets/images/logo/Starlab-logo-big.png')}`, alt: '' }} />
+          <Image attrImage={{ className: 'img-fluid w-50 d-inline', src: `${require('../../assets/images/logo/Starlab-logo-big.png')}`, alt: '' }} style={{width: '30px', height: '30px', objectFit: 'cover' }} />
         </Link>
       )}
       <div className='back-btn' onClick={() => openCloseSidebar()}>
