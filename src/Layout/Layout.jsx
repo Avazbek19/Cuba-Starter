@@ -11,6 +11,7 @@ import Footer from './Footer';
 import CustomizerContext from '../_helper/Customizer';
 import AnimationThemeContext from '../_helper/AnimationTheme';
 import ConfigDB from '../Config/ThemeConfig';
+import Loader from './Loader';
 
 const AppLayout = ({ children, classNames, ...rest }) => {
   const { layout } = useContext(CustomizerContext);

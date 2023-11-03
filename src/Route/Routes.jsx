@@ -8,7 +8,7 @@ import GreenColor from '../Components/Colors/green'
 
 // //Settings
 import Settings from '../Components/Settings/Settings';
-import JsonSave from '../Components/JsonSaver/JsonSave';
+import AddLanguage from '../Components/AddLanguage/AddLanguage';
 
 export const routes = [
   // //page
@@ -19,5 +19,5 @@ export const routes = [
   { path: `${process.env.PUBLIC_URL}/colors/colorg/:layout`, Component: <GreenColor/>},
 
   { path: `${process.env.PUBLIC_URL}/setting/setting-customize/:layout`, Component : <Settings/>},
-  { path: `${process.env.PUBLIC_URL}/setting/json-saver/:layout`, Component : <JsonSave/>}
+  { path: `${process.env.PUBLIC_URL}/setting/json-saver/:layout`, Component : <AddLanguage/>}
 ];
