@@ -32,6 +32,15 @@ export const MENUITEMS = [
           { path: `${process.env.PUBLIC_URL}/setting/setting-customize`, title: 'Customize Settings', type : 'link'},
           { path: `${process.env.PUBLIC_URL}/setting/json-saver`, title: 'Add Language', type: 'link'},
         ]
+      },
+      {
+        title: 'PDF Viewer',
+        icon: 'layout',
+        type: 'sub',
+        active: false,
+        children: [
+          { path: `${process.env.PUBLIC_URL}/pdf/informations`, title: 'PDF view', type: 'link' }
+        ]
       }
     ],
   },

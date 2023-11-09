@@ -10,6 +10,9 @@ import GreenColor from '../Components/Colors/green'
 import Settings from '../Components/Settings/Settings';
 import AddLanguage from '../Components/AddLanguage/AddLanguage';
 
+// //PDF veiw
+import PDFview from '../Components/PDF/PDFview';
+
 export const routes = [
   // //page
   { path: `${process.env.PUBLIC_URL}/pages/sample-page/:layout`, Component: <SamplePage /> },
@@ -19,5 +22,7 @@ export const routes = [
   { path: `${process.env.PUBLIC_URL}/colors/colorg/:layout`, Component: <GreenColor/>},
 
   { path: `${process.env.PUBLIC_URL}/setting/setting-customize/:layout`, Component : <Settings/>},
-  { path: `${process.env.PUBLIC_URL}/setting/json-saver/:layout`, Component : <AddLanguage/>}
+  { path: `${process.env.PUBLIC_URL}/setting/json-saver/:layout`, Component : <AddLanguage/>},
+
+  { path: `${process.env.PUBLIC_URL}/pdf/informations/:layout`, Component : <PDFview/>},
 ];

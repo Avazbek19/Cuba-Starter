@@ -1,0 +1,14 @@
+.table-calculation {
+    border: 1px solid darkgray(210, 14%, 89%);
+    background: dee2e6;
+}
+
+.tr-calculation td {
+    border: 1px solid #dee2e6;
+    padding: 8px;
+    /* Agar kerak bo'lsa, o'zgartiring */
+}
+
+.td-calculation-1 {
+    width: 42px;
+}
