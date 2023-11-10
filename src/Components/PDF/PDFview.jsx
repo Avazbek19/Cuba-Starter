@@ -1,32 +1,66 @@
 import React, { Fragment } from 'react'
-import PDFdocument from './PDFdocument';
+import PDFfactura from './Factura/PDFfactura';
 import { Breadcrumbs } from '../../AbstractElements';
-import './PdfStyles.css'
+import './PDFstyles.css'
 
 export default function PDFview() {
     const jsonData = {
-        "status": "sended",
-        "local": false,
+        "status": "signed",
+        "local": true,
         "tins": [
-            "203366731_1",
-            "304426154_0",
-            "203366731_00019_1"
+            "306180825_1",
+            "304426154_0"
         ],
-        "_id": "654a07e7232ce341094209a2",
-        "roumingId": "65487ce7742509089029c222",
+        "_id": "65327404315f2b0bf46b3f1b",
+        "notes": "",
+        "ownerTin": "306180825",
+        "ownerName": "\"MONT CLOUD \" MAS'ULIYATI CHEKLANGAN JAMIYAT XORIJIY KORXONA",
+        "ownerBranch": null,
+        "docNumber": "705",
+        "docDate": "2023-10-20T00:00:00.000Z",
+        "contractNumber": "27П",
+        "contractDate": "2020-08-27T00:00:00.000Z",
+        "totalSum": 32166375,
+        "totalSumWithVat": 36026340,
+        "totalVatSum": 3859965,
+        "totalFuelSum": 0,
+        "totalDocSum": 36026340,
         "type": "factura",
-        "contractDate": "2020-09-22T00:00:00.000Z",
-        "contractNumber": "Call-291",
-        "createdAt": "2023-11-07T09:44:22.727Z",
+        "subType": "factura",
+        "roumingId": "65327404315f2b0bf46b3f19",
+        "extension": {
+            "facturatype": 0,
+            "singlesidedtype": 0
+        },
+        "targetTins": [
+            {
+                "tin": "304426154",
+                "name": "\"STARLAB\" MAS'ULIYATI CHEKLANGAN JAMIYAT",
+                "branch": null,
+                "signed": 1,
+                "side": "buyer"
+            }
+        ],
+        "stateId": 30,
+        "baseDocs": [
+            {
+                "id": "65327401315f2b0bf46b3f13",
+                "type": "actGoodsAcceptance"
+            }
+        ],
+        "createdAt": "2023-10-20T12:35:16.453Z",
+        "updatedAt": "2023-10-26T08:24:00.364Z",
+        "sentDate": "2023-10-20T12:35:36.722Z",
+        "sign": "",
         "data": {
             "buyer": {
-                "name": "\"STARLAB\" MCHJ",
-                "account": "20208000300691615001",
+                "name": "\"STARLAB\" MAS'ULIYATI CHEKLANGAN JAMIYAT",
+                "account": "20208000200691615001",
                 "bank": {
-                    "bankid": "01084",
-                    "name": "ТОШКЕНТ Ш., \"ТУРОНБАНК\" АТ БАНКИНИНГ ЧИЛОНЗОР ФИЛИАЛИ"
+                    "bankid": "00446",
+                    "name": "ТОШКЕНТ Ш., \"ТУРОНБАНК\" АТ БАНКИНИНГ БОШ ОФИСИ"
                 },
-                "address": "Ўзбекистон Республикаси, Тошкент шаҳри, Чилонзор тумани, МАВЗЕ Е, уй. 9, ",
+                "address": "E MAVZE, 9  ",
                 "mobile": "",
                 "workphone": "",
                 "oked": "",
@@ -40,8 +74,8 @@ export default function PDFview() {
                     "districtcode": 6,
                     "name": "ЧИЛОНЗАРСКИЙ РАЙОН"
                 },
-                "director": "",
-                "accountant": "",
+                "director": "UMAROV XUSNITDIN NURIDDINOVICH",
+                "accountant": "UMAROV XUSNITDIN NURIDDINOVICH",
                 "vatregcode": "326060121141",
                 "vatregstatus": 20,
                 "branchcode": "",
@@ -50,15 +84,15 @@ export default function PDFview() {
                 "category": 0
             },
             "seller": {
-                "name": "\"O`ZBEKTELEKOM \" AJ / Филиал \"Центр развития телекоммуникаций и персонала\" ",
-                "account": "20210000504074838088",
+                "name": "\"MONT CLOUD \" MAS'ULIYATI CHEKLANGAN JAMIYAT XORIJIY KORXONA",
+                "account": "20214000101037058001",
                 "bank": {
-                    "bankid": "00401",
-                    "name": "ТОШКЕНТ Ш., АТ \"АЛОКАБАНК\" БОШ ОФИСИ"
+                    "bankid": "00974",
+                    "name": "ТОШКЕНТ Ш., \"КАПИТАЛБАНК\" АТ БАНКИНИНГ АМАЛИЁТ БОШКАРМАСИ"
                 },
-                "address": "г. Ташкент ул. Амир Темур, 97А, ",
-                "mobile": "(99 ) 836-7600",
-                "workphone": "(99 ) 836-7600",
+                "address": "AMIR TEMUR SHOX KO'CHASI 107 A-UY  ",
+                "mobile": "998977772589",
+                "workphone": "998977772589",
                 "oked": "",
                 "region": {
                     "regionid": 26,
@@ -70,12 +104,12 @@ export default function PDFview() {
                     "districtcode": 3,
                     "name": "ЮНУСАБАДСКИЙ РАЙОН"
                 },
-                "director": "Туляганов Ядгар Рахимджанович",
-                "accountant": "",
-                "vatregcode": "326030013817",
+                "director": "ASKAROV RUSTAM TAXIROVICH",
+                "accountant": "SOLOVEVA YELENA VLADIMIROVNA",
+                "vatregcode": "326030038818",
                 "vatregstatus": 20,
-                "branchcode": "00019",
-                "branchname": "Телекоммуникация ва Персонални ривожлантириш маркази филиали",
+                "branchcode": "",
+                "branchname": "",
                 "taxgap": null,
                 "category": 0
             },
@@ -88,20 +122,20 @@ export default function PDFview() {
             },
             "itemreleaseddoc": {
                 "itemreleasedtin": null,
-                "itemreleasedfio": "",
-                "itemreleasedpinfl": ""
+                "itemreleasedfio": "ASKAROV R.T.",
+                "itemreleasedpinfl": "33101756800026"
             },
             "facturaempowermentdoc": {
                 "empowermentno": "",
                 "empowermentdateofissue": null,
-                "agentfio": "",
+                "agentfio": null,
                 "agenttin": null,
-                "agentpinfl": "",
-                "agentfacturaid": "65487ce7742509089029c223"
+                "agentpinfl": null,
+                "agentfacturaid": ""
             },
             "facturadoc": {
-                "facturano": "1000005915799",
-                "facturadate": "2023-10-31T00:00:00Z"
+                "facturano": "705",
+                "facturadate": "2023-10-20T00:00:00Z"
             },
             "oldfacturadoc": {
                 "oldfacturaid": null,
@@ -109,14 +143,14 @@ export default function PDFview() {
                 "oldfacturadate": null
             },
             "contractdoc": {
-                "contractno": "Call-291",
-                "contractdate": "2020-09-22T00:00:00Z"
+                "contractno": "27П",
+                "contractdate": "2020-08-27T00:00:00Z"
             },
             "notes": null,
-            "currentstateid": 15,
+            "currentstateid": 30,
             "buyertin": "304426154",
-            "sellertin": "203366731",
-            "lotid": "",
+            "sellertin": "306180825",
+            "lotid": null,
             "investmentobjectdoc": {
                 "objectid": null,
                 "objectname": null
@@ -124,8 +158,8 @@ export default function PDFview() {
             "contractid": null,
             "waybillid": null,
             "waybillids": null,
-            "facturaproductid": "65487ce7742509089029c224",
-            "facturaid": "65487ce7742509089029c222",
+            "facturaproductid": "65327404315f2b0bf46b3f1a",
+            "facturaid": "65327404315f2b0bf46b3f19",
             "version": 1,
             "facturatype": 0,
             "singlesidedtype": 0,
@@ -136,16 +170,16 @@ export default function PDFview() {
             "states": [
                 {
                     "stateid": 10,
-                    "timestamp": "2023-11-07T09:48:23.053Z",
+                    "timestamp": "2023-10-20T12:39:13.24Z",
                     "sender": {
                         "taxpayer": {
-                            "tin": "491433281",
-                            "fio": "TULYAGANOV YADGAR RAXIMDJANOVICH"
+                            "tin": "611130702",
+                            "fio": "ASKAROV RUSTAM TAXIROVICH"
                         },
                         "host": "factura-provider-api",
-                        "clientip": "185.74.7.28",
-                        "datasource": "30",
-                        "certificateid": 2008042347
+                        "clientip": "194.149.242.6",
+                        "datasource": "160",
+                        "certificateid": 2014257253
                     },
                     "notes": null,
                     "signtime": null,
@@ -153,7 +187,7 @@ export default function PDFview() {
                 },
                 {
                     "stateid": 15,
-                    "timestamp": "2023-11-07T09:48:23.089Z",
+                    "timestamp": "2023-10-20T12:39:13.279Z",
                     "sender": {
                         "taxpayer": {
                             "tin": null,
@@ -167,13 +201,30 @@ export default function PDFview() {
                     "notes": null,
                     "signtime": null,
                     "publickeyoid": null
+                },
+                {
+                    "stateid": 30,
+                    "timestamp": "2023-10-26T08:27:44.471Z",
+                    "sender": {
+                        "taxpayer": {
+                            "tin": "30108871580014",
+                            "fio": "UMAROV XUSNITDIN NURIDDINOVICH"
+                        },
+                        "host": "soliqservis.uz",
+                        "clientip": "213.230.80.50",
+                        "datasource": "factura",
+                        "certificateid": 2014784186
+                    },
+                    "notes": null,
+                    "signtime": null,
+                    "publickeyoid": null
                 }
             ],
-            "created": "2023-11-07T09:48:23.064Z",
-            "updated": "2023-11-07T09:48:23.097Z",
+            "created": "2023-10-20T12:39:13.255Z",
+            "updated": "2023-10-26T08:27:44.468Z",
             "productlist": {
-                "facturaproductid": "65487ce7742509089029c224",
-                "tin": "203366731",
+                "facturaproductid": "65327404315f2b0bf46b3f1a",
+                "tin": "306180825",
                 "hascommittent": false,
                 "haslgota": false,
                 "hidereportcommittent": false,
@@ -183,78 +234,117 @@ export default function PDFview() {
                 "products": [
                     {
                         "ordno": 1,
-                        "committentname": "",
-                        "committenttin": "",
-                        "committentvatregcode": "",
+                        "committentname": null,
+                        "committenttin": null,
+                        "committentvatregcode": null,
                         "committentvatregstatus": null,
-                        "name": "Виртуальные номера",
-                        "catalogcode": "10310003002000000",
-                        "catalogname": "Услуги фиксированной (стационарной) телефонной связи по предоставлению доступа и пользованию общественными телефонными сетями",
+                        "name": "E-EPEss On-prem. 1 y. Ren. for 100. ESET PROTECT Essential On-prem (E). For 1 year. Renewal.For protection 100 objects.",
+                        "catalogcode": "09800001009000000",
+                        "catalogname": "Dasturiy mahsulotlar",
                         "barcode": "",
                         "marks": null,
                         "exchangeinfo": null,
                         "serial": null,
                         "measureid": null,
-                        "packagecode": "1500684",
-                        "packagename": "услуга (сум)",
+                        "packagecode": "1500242",
+                        "packagename": "шт.",
                         "basesumma": 0,
                         "profitrate": 0,
-                        "count": 0,
-                        "summa": 0,
-                        "deliverysum": 44642.86,
+                        "count": 1,
+                        "summa": 14055825,
+                        "deliverysum": 14055825,
                         "exciserate": 0,
                         "excisesum": 0,
                         "withoutvat": false,
                         "vatrate": 12,
-                        "vatsum": 5357.14,
-                        "deliverysumwithvat": 50000,
+                        "vatsum": 1686699,
+                        "deliverysumwithvat": 15742524,
                         "lgotaid": null,
-                        "lgotaname": null,
+                        "lgotaname": "",
                         "lgotavatsum": 0,
                         "lgotatype": null,
                         "warehouseid": null,
-                        "origin": 3
+                        "origin": 2
+                    },
+                    {
+                        "ordno": 2,
+                        "committentname": null,
+                        "committenttin": null,
+                        "committentvatregcode": null,
+                        "committentvatregstatus": null,
+                        "name": "ESET PROTECT Essential On-prem (E). For 1 year. Over 100. For protection 50 objects. E-EPEss O. 1 y. 100. for 50., право на использование",
+                        "catalogcode": "09800001009000000",
+                        "catalogname": "Dasturiy mahsulotlar",
+                        "barcode": "",
+                        "marks": null,
+                        "exchangeinfo": null,
+                        "serial": null,
+                        "measureid": null,
+                        "packagecode": "1500242",
+                        "packagename": "шт.",
+                        "basesumma": 0,
+                        "profitrate": 0,
+                        "count": 1,
+                        "summa": 10777912.5,
+                        "deliverysum": 10777912.5,
+                        "exciserate": 0,
+                        "excisesum": 0,
+                        "withoutvat": false,
+                        "vatrate": 12,
+                        "vatsum": 1293349.5,
+                        "deliverysumwithvat": 12071262,
+                        "lgotaid": null,
+                        "lgotaname": "",
+                        "lgotavatsum": 0,
+                        "lgotatype": null,
+                        "warehouseid": null,
+                        "origin": 2
+                    },
+                    {
+                        "ordno": 3,
+                        "committentname": null,
+                        "committenttin": null,
+                        "committentvatregcode": null,
+                        "committentvatregstatus": null,
+                        "name": "ESET PROTECT Entry On-prem (E). For 1 year. Makeover. For protection 150 objects E-EPEntr O1 y. Make. for 150., право на использование",
+                        "catalogcode": "09800001009000000",
+                        "catalogname": "Dasturiy mahsulotlar",
+                        "barcode": "",
+                        "marks": null,
+                        "exchangeinfo": null,
+                        "serial": null,
+                        "measureid": null,
+                        "packagecode": "1500242",
+                        "packagename": "шт.",
+                        "basesumma": 0,
+                        "profitrate": 0,
+                        "count": 1,
+                        "summa": 7332637.5,
+                        "deliverysum": 7332637.5,
+                        "exciserate": 0,
+                        "excisesum": 0,
+                        "withoutvat": false,
+                        "vatrate": 12,
+                        "vatsum": 879916.5,
+                        "deliverysumwithvat": 8212554,
+                        "lgotaid": null,
+                        "lgotaname": "",
+                        "lgotavatsum": 0,
+                        "lgotatype": null,
+                        "warehouseid": null,
+                        "origin": 2
                     }
                 ],
-                "timestamp": "2023-11-07T09:48:23.053Z",
+                "timestamp": "2023-10-20T12:39:13.24Z",
                 "updated": null,
-                "created": "2023-11-07T09:48:23.066Z"
+                "created": "2023-10-20T12:39:13.258Z"
             }
-        },
-        "docDate": "2023-10-31T00:00:00.000Z",
-        "docNumber": "1000005915799",
-        "extension": {
-            "facturatype": 0,
-            "singlesidedtype": 0
-        },
-        "notes": "",
-        "ownerBranch": "00019",
-        "ownerName": "\"O`ZBEKTELEKOM \" AJ / Филиал \"Центр развития телекоммуникаций и персонала\" ",
-        "ownerTin": "203366731",
-        "sign": "",
-        "stateId": 15,
-        "subType": "factura",
-        "targetTins": [
-            {
-                "tin": "304426154",
-                "name": "\"STARLAB\" MCHJ",
-                "branch": null,
-                "signed": 0,
-                "side": "buyer"
-            }
-        ],
-        "totalDocSum": 50000,
-        "totalFuelSum": 0,
-        "totalSum": 44642.86,
-        "totalSumWithVat": 50000,
-        "totalVatSum": 5357.14,
-        "updatedAt": "2023-11-07T09:44:22.727Z",
-        "baseDocs": []
+        }
     }
     return (
         <Fragment>
             <Breadcrumbs mainTitle='Invoice' parent='Pages' title='Invoice' />
-            <PDFdocument data={jsonData} />
+            <PDFfactura data={jsonData} />
         </Fragment>
     )
 }
