@@ -5,13 +5,13 @@ import { EmailAddress, ForgotPassword, LoginWithJWT, Password, RememberPassword,
 
 import { useNavigate } from 'react-router-dom';
 import { Jwt_token } from '../../../Config/Config';
-import man from '../../../assets/images/dashboard/profile.png';
 import { handleResponse } from '../../../Services/fack.backend';
 
 import CustomizerContext from '../../../_helper/Customizer';
 import OtherWay from './OtherWay';
 
 const LoginTab = ({ selected }) => {
+  const man = ''
   const [email, setEmail] = useState('test@gmail.com');
   const [password, setPassword] = useState('test123');
   const [togglePassword, setTogglePassword] = useState(false);

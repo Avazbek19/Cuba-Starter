@@ -1,5 +1,5 @@
   export const classes= [
-    { Dubai:'compact-wrapper' },
+    { :'compact-wrapper' },
     { London:'only-body' },
     { Seoul:'compact-wrapper modern-type' },
     { LosAngeles:'horizontal-wrapper material-type' },

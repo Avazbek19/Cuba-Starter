@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FileText, LogIn, Mail, User ,Settings } from 'react-feather';
-import man from '../../../assets/images/dashboard/profile.png';
 import { LI, UL, Image, P } from '../../../AbstractElements';
 import CustomizerContext from '../../../_helper/Customizer';
 import { Account, Admin, Inbox, LogOut, Taskboard } from '../../../Constant';
 
 const UserHeader = () => {
+  const man = ''
   const history = useNavigate();
   const [profile, setProfile] = useState('');
   const [name, setName] = useState('Avazbek');

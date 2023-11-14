@@ -4,8 +4,8 @@ import { Form, FormGroup, Input, Label } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Twitter } from 'react-feather';
 
-import logoWhite from '../../../assets/images/logo/logo.png';
-import logoDark from '../../../assets/images/logo/logo_dark.png';
+import logoWhite from '../../../assets/images/logo/Starlab-logo-big.png';
+import logoDark from '../../../assets/images/logo/Starlab-logo-big.png';
 
 const LoginForm = ({ logoClassMain }) => {
   const [togglePassword, setTogglePassword] = useState(false);

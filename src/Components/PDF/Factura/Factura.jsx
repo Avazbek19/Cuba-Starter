@@ -1,5 +1,5 @@
 import React from 'react'
-import { ones, scales, teens, tens } from '../RuNumConstant';
+import { ones, scales, teens, tens, monthNames } from '../RuConstants';
 
 
 export default function Factura({ data }) {
@@ -7,17 +7,24 @@ export default function Factura({ data }) {
 
     function convertDateFormat(isoDateString) {
         const date = new Date(isoDateString);
-
         const year = date.getFullYear();
         const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');
         const hours = String(date.getHours()).padStart(2, '0');
         const minutes = String(date.getMinutes()).padStart(2, '0');
         const seconds = String(date.getSeconds()).padStart(2, '0');
-
         const newDateFormat = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
         return newDateFormat;
     }
+
+    const formatDate = (inputDate) => {
+        const dateObject = new Date(inputDate);
+        const day = dateObject.getDate();
+        const monthIndex = dateObject.getMonth();
+        const year = dateObject.getFullYear();
+        const formattedDate = `${day} ${monthNames[monthIndex]} ${year} г`;
+        return formattedDate;
+    };
 
     function numberToFormattedString(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -75,15 +82,15 @@ export default function Factura({ data }) {
     }
 
     return (
-        <div>
+        <div className='pdf-openner'>
             <div className='pdf-send-id'>
                 <p className='m-0'>ID документа (edocs.uz):{data._id}</p>
                 <p className='m-0'>ID документа (rouming.uz):{data.roumingId}</p>
             </div>
             <div className='pdf-center text-center my-5'>
                 <h4 className='title-of-pdf'>СЧЕТ-ФАКТУРА</h4>
-                <p className='m-0' style={boldTextStyle}>№ {data.docNumber} от {data.docDate.substring(0, 10)}.</p>
-                <p className='m-0' style={boldTextStyle}>к Договору№ {datas.contractdoc.contractno} от {datas.contractdoc.contractdate.substring(0, 10)}.</p>
+                <p className='m-0' style={boldTextStyle}>№ {data.docNumber} от {formatDate(data.docDate)}.</p>
+                <p className='m-0' style={boldTextStyle}>к Договору№ {datas.contractdoc.contractno} от {formatDate(datas.contractdoc.contractdate)}.</p>
             </div>
             <div className='pdf-table row'>
                 <div className='col-6'>
@@ -116,10 +123,15 @@ export default function Factura({ data }) {
                             <td>Банк:</td>
                             <td className='border-bottom'>{datas.seller.bank.bankid} - {datas.seller.bank.name}</td>
                         </tr>
-                        <tr>
-                            <td>Филиал:</td>
-                            <td className='border-bottom'>{datas.seller.branchname}</td>
-                        </tr>
+                        {
+                            datas.seller.branchname ?
+                                <tr>
+                                    <td>Филиал:</td>
+                                    <td className='border-bottom'>{datas.seller.branchname}</td>
+                                </tr>
+                                :
+                                ''
+                        }
                     </tbody>
                 </div>
                 <div className='col-6'>
@@ -152,16 +164,20 @@ export default function Factura({ data }) {
                             <td>Банк:</td>
                             <td className='border-bottom'>{datas.buyer.bank.bankid} - {datas.buyer.bank.name}</td>
                         </tr>
-                        <tr>
-                            <td>Филиал:</td>
-                            <td className='border-bottom'>{datas.buyer.branchname}</td>
-                        </tr>
+                        {
+                            datas.buyer.branchname ?
+                                <tr>
+                                    <td>Филиал:</td>
+                                    <td className='border-bottom'>{datas.buyer.branchname}</td>
+                                </tr>
+                                : ''
+                        }
                     </tbody>
                 </div>
             </div>
             <div className='my-2'>
                 <tbody className='table table-calculation'>
-                    <tr className='tr-calculation text-center '>
+                    <tr className='tr-calculation-1 tr-calculation text-center '>
                         <td className='td-calculation-1'>п/п</td>
                         <td className='td-calculation-2'>Наименование товаров (услуг)</td>
                         <td>Идентификационный код и название
@@ -179,10 +195,10 @@ export default function Factura({ data }) {
                         <td>Стоимость
                             поставки
                         </td>
-                        <td className='text-center'>
-                            НДС
-                            <td className='text-dark bg-transparent'>ставка</td>
-                            <td className='text-dark bg-transparent'>сумма</td>
+                        <td class="trrr">
+                            <div class="div1">НДС</div>
+                            <div class="div2">ставка</div>
+                            <div class="div3">сумма</div>
                         </td>
                         <td >
                             Стоимость
@@ -201,9 +217,9 @@ export default function Factura({ data }) {
                                     <td>{product.count}</td>
                                     <td style={{ width: '150px' }}>{numberToFormattedString(product.summa)}</td>
                                     <td>{numberToFormattedString(product.deliverysum)}</td>
-                                    <td>
-                                        <td>{numberToFormattedString(product.vatrate)}</td>
-                                        <td style={{ width: '150px' }}>{numberToFormattedString(product.vatsum)}</td>
+                                    <td className='trrr1'>
+                                        <div className='div11'>{numberToFormattedString(product.vatrate)}</div>
+                                        <div className='div12'>{numberToFormattedString(product.vatsum)}</div>
                                     </td>
                                     <td>{numberToFormattedString(product.deliverysumwithvat)}</td>
                                 </tr>
@@ -213,9 +229,9 @@ export default function Factura({ data }) {
                     <tr className='tr-calculation'>
                         <td colSpan='7' className='text-start'>Итого:</td>
                         <td>{numberToFormattedString(data.totalSum)}</td>
-                        <td>
-                            <td>x</td>
-                            <td>{numberToFormattedString(data.totalVatSum)}</td>
+                        <td className='d-flex'>
+                            <div style={{ padding: '10px' }}>x</div>
+                            <div style={{ width: '100%', padding: '8px' }}>{numberToFormattedString(data.totalVatSum)}</div>
                         </td>
                         <td>{numberToFormattedString(data.totalDocSum)}</td>
                     </tr>
@@ -270,26 +286,42 @@ export default function Factura({ data }) {
             </div>
             <div className='stamps my-5 row justify-content-between'>
                 <h4 className='text-center my-5'>ПОДПИСИ СТОРОН</h4>
-                <div className='stamp-seller stamp col-4'>
-                    <div className='row justify-content-between'>
-                        <p className='col-5 text-start'>SN:{datas.states[0].sender.certificateid}</p>
-                        <p className='col-5 text-end'>{convertDateFormat(datas.states[0].timestamp)}</p>
-                    </div>
-                    <div className='stamp-send-1'>ОТПРАВЛЕН</div>
-                    <p>{data.ownerName}</p>
-                    <p>{datas.states[0].sender.taxpayer.fio}</p>
-                    <p>ИНН/ПИНФЛ: {datas.states[0].sender.taxpayer.tin}</p>
-                </div>
-                <div className='stamp-buyer stamp col-4'>
-                    <div className='row justify-content-between'>
-                        <p className='col-5 text-start'>SN:{datas.states[2].sender.certificateid}</p>
-                        <p className='col-5 text-end'>{convertDateFormat(datas.states[2].timestamp)}</p>
-                    </div>
-                    <div className='stamp-send-2'>ПОДТВЕРЖДЁН</div>
-                    <p>{data.targetTins[0].name}</p>
-                    <p>{datas.states[2].sender.taxpayer.fio}</p>
-                    <p>ИНН/ПИНФЛ: {datas.states[2].sender.taxpayer.tin}</p>
-                </div>
+                {
+                    datas.states.map((item, index) => {
+                        if (item.stateid == 10) {
+                            return (
+                                <div className='stamp-seller stamp col-4 col-xl-3' key={index}>
+                                    <div className='row justify-content-between'>
+                                        <p className='col-5 text-start'>SN:{item.sender.certificateid}</p>
+                                        <p className='col-5 text-end'>{convertDateFormat(item.timestamp)}</p>
+                                    </div>
+                                    <div className='stamp-send-1'>ОТПРАВЛЕН</div>
+                                    <p>{data.ownerName}</p>
+                                    <p>{item.sender.taxpayer.fio}</p>
+                                    <p>ИНН/ПИНФЛ: {item.sender.taxpayer.tin}</p>
+                                </div>
+                            )
+                        }
+                    })
+                }
+                {
+                    datas.states.map((item, index) => {
+                        if (item.stateid == 30) {
+                            return (
+                                <div className='stamp-buyer stamp col-4 col-xl-3' key={index}>
+                                    <div className='row justify-content-between'>
+                                        <p className='col-5 text-start'>SN:{item.sender.certificateid}</p>
+                                        <p className='col-5 text-end'>{convertDateFormat(item.timestamp)}</p>
+                                    </div>
+                                    <div className='stamp-send-2'>ПОДТВЕРЖДЁН</div>
+                                    <p>{data.targetTins[0].name}</p>
+                                    <p>{item.sender.taxpayer.fio}</p>
+                                    <p>ИНН/ПИНФЛ: {item.sender.taxpayer.tin}</p>
+                                </div>
+                            )
+                        }
+                    })
+                }
             </div>
         </div>
     )

@@ -2,349 +2,122 @@ import React, { Fragment } from 'react'
 import PDFfactura from './Factura/PDFfactura';
 import { Breadcrumbs } from '../../AbstractElements';
 import './PDFstyles.css'
+import PDFempowerment from './Empowerment/PDFempowerment';
 
 export default function PDFview() {
     const jsonData = {
-        "status": "signed",
-        "local": true,
+        "status": "sended",
+        "local": false,
         "tins": [
-            "306180825_1",
+            "305907639_1",
+            "32209600221203_0",
             "304426154_0"
         ],
-        "_id": "65327404315f2b0bf46b3f1b",
-        "notes": "",
-        "ownerTin": "306180825",
-        "ownerName": "\"MONT CLOUD \" MAS'ULIYATI CHEKLANGAN JAMIYAT XORIJIY KORXONA",
-        "ownerBranch": null,
-        "docNumber": "705",
-        "docDate": "2023-10-20T00:00:00.000Z",
-        "contractNumber": "27П",
-        "contractDate": "2020-08-27T00:00:00.000Z",
-        "totalSum": 32166375,
-        "totalSumWithVat": 36026340,
-        "totalVatSum": 3859965,
-        "totalFuelSum": 0,
-        "totalDocSum": 36026340,
-        "type": "factura",
-        "subType": "factura",
-        "roumingId": "65327404315f2b0bf46b3f19",
-        "extension": {
-            "facturatype": 0,
-            "singlesidedtype": 0
-        },
-        "targetTins": [
-            {
-                "tin": "304426154",
-                "name": "\"STARLAB\" MAS'ULIYATI CHEKLANGAN JAMIYAT",
-                "branch": null,
-                "signed": 1,
-                "side": "buyer"
-            }
-        ],
-        "stateId": 30,
-        "baseDocs": [
-            {
-                "id": "65327401315f2b0bf46b3f13",
-                "type": "actGoodsAcceptance"
-            }
-        ],
-        "createdAt": "2023-10-20T12:35:16.453Z",
-        "updatedAt": "2023-10-26T08:24:00.364Z",
-        "sentDate": "2023-10-20T12:35:36.722Z",
-        "sign": "",
+        "_id": "64f70dc39b74689f8efe9435",
+        "roumingId": "64f7042ef866a4efb32e8f41",
+        "type": "empowerment",
+        "contractDate": "2023-08-31T00:00:00.000Z",
+        "contractNumber": "1638393",
+        "createdAt": "2023-09-05T11:11:32.403Z",
         "data": {
-            "buyer": {
-                "name": "\"STARLAB\" MAS'ULIYATI CHEKLANGAN JAMIYAT",
-                "account": "20208000200691615001",
-                "bank": {
-                    "bankid": "00446",
-                    "name": "ТОШКЕНТ Ш., \"ТУРОНБАНК\" АТ БАНКИНИНГ БОШ ОФИСИ"
-                },
-                "address": "E MAVZE, 9  ",
-                "mobile": "",
-                "workphone": "",
-                "oked": "",
-                "region": {
-                    "regionid": 26,
-                    "name": "ГОРОД ТАШКЕНТ"
-                },
-                "district": {
-                    "districtid": "2606",
-                    "regionid": 26,
-                    "districtcode": 6,
-                    "name": "ЧИЛОНЗАРСКИЙ РАЙОН"
-                },
-                "director": "UMAROV XUSNITDIN NURIDDINOVICH",
-                "accountant": "UMAROV XUSNITDIN NURIDDINOVICH",
-                "vatregcode": "326060121141",
-                "vatregstatus": 20,
-                "branchcode": "",
-                "branchname": "",
-                "taxgap": null,
-                "category": 0
-            },
-            "seller": {
-                "name": "\"MONT CLOUD \" MAS'ULIYATI CHEKLANGAN JAMIYAT XORIJIY KORXONA",
-                "account": "20214000101037058001",
-                "bank": {
-                    "bankid": "00974",
-                    "name": "ТОШКЕНТ Ш., \"КАПИТАЛБАНК\" АТ БАНКИНИНГ АМАЛИЁТ БОШКАРМАСИ"
-                },
-                "address": "AMIR TEMUR SHOX KO'CHASI 107 A-UY  ",
-                "mobile": "998977772589",
-                "workphone": "998977772589",
-                "oked": "",
-                "region": {
-                    "regionid": 26,
-                    "name": "ГОРОД ТАШКЕНТ"
-                },
-                "district": {
-                    "districtid": "2603",
-                    "regionid": 26,
-                    "districtcode": 3,
-                    "name": "ЮНУСАБАДСКИЙ РАЙОН"
-                },
-                "director": "ASKAROV RUSTAM TAXIROVICH",
-                "accountant": "SOLOVEVA YELENA VLADIMIROVNA",
-                "vatregcode": "326030038818",
-                "vatregstatus": 20,
-                "branchcode": "",
-                "branchname": "",
-                "taxgap": null,
-                "category": 0
-            },
-            "foreigncompany": {
-                "countryid": null,
-                "name": null,
-                "address": null,
-                "bank": null,
-                "account": null
-            },
-            "itemreleaseddoc": {
-                "itemreleasedtin": null,
-                "itemreleasedfio": "ASKAROV R.T.",
-                "itemreleasedpinfl": "33101756800026"
-            },
-            "facturaempowermentdoc": {
-                "empowermentno": "",
-                "empowermentdateofissue": null,
-                "agentfio": null,
-                "agenttin": null,
-                "agentpinfl": null,
-                "agentfacturaid": ""
-            },
-            "facturadoc": {
-                "facturano": "705",
-                "facturadate": "2023-10-20T00:00:00Z"
-            },
-            "oldfacturadoc": {
-                "oldfacturaid": null,
-                "oldfacturano": null,
-                "oldfacturadate": null
+            "empowermentdoc": {
+                "empowermentno": "00000000293",
+                "empowermentdateofissue": "2023-09-04",
+                "empowermentdateofexpire": "2023-09-14"
             },
             "contractdoc": {
-                "contractno": "27П",
-                "contractdate": "2020-08-27T00:00:00Z"
+                "contractno": "1638393",
+                "contractdate": "2023-08-31"
             },
-            "notes": null,
-            "currentstateid": 30,
-            "buyertin": "304426154",
-            "sellertin": "306180825",
-            "lotid": null,
-            "investmentobjectdoc": {
-                "objectid": null,
-                "objectname": null
+            "agent": {
+                "jobtitle": null,
+                "fio": "TASHPULATOV RAMAZIDDIN SAMARIDDINOVICH",
+                "passport": {
+                    "number": null,
+                    "issuedby": null,
+                    "dateofissue": null
+                },
+                "agenttin": "32209600221203",
+                "agentempowermentid": "64f7042fc76f0b0fe40e02ba"
             },
-            "contractid": null,
-            "waybillid": null,
-            "waybillids": null,
-            "facturaproductid": "65327404315f2b0bf46b3f1a",
-            "facturaid": "65327404315f2b0bf46b3f19",
-            "version": 1,
-            "facturatype": 0,
-            "singlesidedtype": 0,
-            "isprimarydocument": false,
-            "incometype": 0,
-            "realizationpurpose": 0,
-            "hasmarking": false,
-            "states": [
-                {
-                    "stateid": 10,
-                    "timestamp": "2023-10-20T12:39:13.24Z",
-                    "sender": {
-                        "taxpayer": {
-                            "tin": "611130702",
-                            "fio": "ASKAROV RUSTAM TAXIROVICH"
-                        },
-                        "host": "factura-provider-api",
-                        "clientip": "194.149.242.6",
-                        "datasource": "160",
-                        "certificateid": 2014257253
-                    },
-                    "notes": null,
-                    "signtime": null,
-                    "publickeyoid": null
-                },
-                {
-                    "stateid": 15,
-                    "timestamp": "2023-10-20T12:39:13.279Z",
-                    "sender": {
-                        "taxpayer": {
-                            "tin": null,
-                            "fio": null
-                        },
-                        "host": null,
-                        "clientip": null,
-                        "datasource": "system",
-                        "certificateid": 0
-                    },
-                    "notes": null,
-                    "signtime": null,
-                    "publickeyoid": null
-                },
-                {
-                    "stateid": 30,
-                    "timestamp": "2023-10-26T08:27:44.471Z",
-                    "sender": {
-                        "taxpayer": {
-                            "tin": "30108871580014",
-                            "fio": "UMAROV XUSNITDIN NURIDDINOVICH"
-                        },
-                        "host": "soliqservis.uz",
-                        "clientip": "213.230.80.50",
-                        "datasource": "factura",
-                        "certificateid": 2014784186
-                    },
-                    "notes": null,
-                    "signtime": null,
-                    "publickeyoid": null
-                }
-            ],
-            "created": "2023-10-20T12:39:13.255Z",
-            "updated": "2023-10-26T08:27:44.468Z",
+            "sellertin": "304426154",
+            "seller": {
+                "name": "\"STARLAB\" MCHJ",
+                "branchcode": "",
+                "branchname": "",
+                "account": "20208000200691615001",
+                "bankid": "00446",
+                "address": "E MAVZE, 9  ",
+                "director": "UMAROV XUSNITDIN NURIDDINOVICH",
+                "accountant": "UMAROV XUSNITDIN NURIDDINOVICH"
+            },
+            "buyertin": "305907639",
             "productlist": {
-                "facturaproductid": "65327404315f2b0bf46b3f1a",
-                "tin": "306180825",
-                "hascommittent": false,
-                "haslgota": false,
-                "hidereportcommittent": false,
-                "hasmedical": false,
+                "tin": "305907639",
                 "hasexcise": false,
                 "hasvat": true,
                 "products": [
                     {
                         "ordno": 1,
-                        "committentname": null,
-                        "committenttin": null,
-                        "committentvatregcode": null,
-                        "committentvatregstatus": null,
-                        "name": "E-EPEss On-prem. 1 y. Ren. for 100. ESET PROTECT Essential On-prem (E). For 1 year. Renewal.For protection 100 objects.",
-                        "catalogcode": "09800001009000000",
-                        "catalogname": "Dasturiy mahsulotlar",
-                        "barcode": "",
-                        "marks": null,
-                        "exchangeinfo": null,
-                        "serial": null,
-                        "measureid": null,
-                        "packagecode": "1500242",
-                        "packagename": "шт.",
-                        "basesumma": 0,
-                        "profitrate": 0,
-                        "count": 1,
-                        "summa": 14055825,
-                        "deliverysum": 14055825,
-                        "exciserate": 0,
-                        "excisesum": 0,
-                        "withoutvat": false,
-                        "vatrate": 12,
-                        "vatsum": 1686699,
-                        "deliverysumwithvat": 15742524,
-                        "lgotaid": null,
-                        "lgotaname": "",
-                        "lgotavatsum": 0,
-                        "lgotatype": null,
-                        "warehouseid": null,
-                        "origin": 2
-                    },
-                    {
-                        "ordno": 2,
-                        "committentname": null,
-                        "committenttin": null,
-                        "committentvatregcode": null,
-                        "committentvatregstatus": null,
-                        "name": "ESET PROTECT Essential On-prem (E). For 1 year. Over 100. For protection 50 objects. E-EPEss O. 1 y. 100. for 50., право на использование",
-                        "catalogcode": "09800001009000000",
-                        "catalogname": "Dasturiy mahsulotlar",
-                        "barcode": "",
-                        "marks": null,
-                        "exchangeinfo": null,
-                        "serial": null,
-                        "measureid": null,
-                        "packagecode": "1500242",
-                        "packagename": "шт.",
-                        "basesumma": 0,
-                        "profitrate": 0,
-                        "count": 1,
-                        "summa": 10777912.5,
-                        "deliverysum": 10777912.5,
-                        "exciserate": 0,
-                        "excisesum": 0,
-                        "withoutvat": false,
-                        "vatrate": 12,
-                        "vatsum": 1293349.5,
-                        "deliverysumwithvat": 12071262,
-                        "lgotaid": null,
-                        "lgotaname": "",
-                        "lgotavatsum": 0,
-                        "lgotatype": null,
-                        "warehouseid": null,
-                        "origin": 2
-                    },
-                    {
-                        "ordno": 3,
-                        "committentname": null,
-                        "committenttin": null,
-                        "committentvatregcode": null,
-                        "committentvatregstatus": null,
-                        "name": "ESET PROTECT Entry On-prem (E). For 1 year. Makeover. For protection 150 objects E-EPEntr O1 y. Make. for 150., право на использование",
-                        "catalogcode": "09800001009000000",
-                        "catalogname": "Dasturiy mahsulotlar",
-                        "barcode": "",
-                        "marks": null,
-                        "exchangeinfo": null,
-                        "serial": null,
-                        "measureid": null,
-                        "packagecode": "1500242",
-                        "packagename": "шт.",
-                        "basesumma": 0,
-                        "profitrate": 0,
-                        "count": 1,
-                        "summa": 7332637.5,
-                        "deliverysum": 7332637.5,
-                        "exciserate": 0,
-                        "excisesum": 0,
-                        "withoutvat": false,
-                        "vatrate": 12,
-                        "vatsum": 879916.5,
-                        "deliverysumwithvat": 8212554,
-                        "lgotaid": null,
-                        "lgotaname": "",
-                        "lgotavatsum": 0,
-                        "lgotatype": null,
-                        "warehouseid": null,
-                        "origin": 2
+                        "catalogcode": "",
+                        "catalogname": "",
+                        "name": "Программное обеспечение в сфере информационных технологий ESET PROTECT Entry On-prem (E). For 9 months. Over 137. For protection 50 objects",
+                        "measureid": "1",
+                        "count": "1"
                     }
                 ],
-                "timestamp": "2023-10-20T12:39:13.24Z",
-                "updated": null,
-                "created": "2023-10-20T12:39:13.258Z"
+                "empowermentproductid": "64f704301f76a9bbd306aa35"
+            },
+            "buyer": {
+                "name": "\"KIBERXAVFSIZLIK MARKAZI\" DUK",
+                "branchcode": "",
+                "branchname": "",
+                "account": "20210000300953339001",
+                "bankid": "00401",
+                "address": "ТОШКЕНТ ШАҲАР МИРЗО УЛУҒБЕК ТУМАНИ DO'RMON YO`LI KO`CHASI, 31-UY  ",
+                "director": "MIRZAYEV OLIMJON NOMAZOVICH",
+                "accountant": "ABDULLAYEV IKROM ISKANDARBEKOVICH"
+            },
+            "empowermentid": "64f7042ef866a4efb32e8f41"
+        },
+        "docDate": "2023-09-04T00:00:00.000Z",
+        "docNumber": "00000000293",
+        "notes": "",
+        "ownerBranch": null,
+        "ownerName": "\"KIBERXAVFSIZLIK MARKAZI\" DUK",
+        "ownerTin": "305907639",
+        "sign": "MIAGCSqGSIb3DQEHAqCAMIACAQExEDAOBgoqhlwDDwEDAgEBBQAwgAYJKoZIhvcNAQcBoIAkgASCA+h7ImVtcG93ZXJtZW50ZG9jIjp7ImVtcG93ZXJtZW50bm8iOiIwMDAwMDAwMDI5MyIsImVtcG93ZXJtZW50ZGF0ZW9maXNzdWUiOiIyMDIzLTA5LTA0IiwiZW1wb3dlcm1lbnRkYXRlb2ZleHBpcmUiOiIyMDIzLTA5LTE0In0sImNvbnRyYWN0ZG9jIjp7ImNvbnRyYWN0bm8iOiIxNjM4MzkzIiwiY29udHJhY3RkYXRlIjoiMjAyMy0wOC0zMSJ9LCJhZ2VudCI6eyJqb2J0aXRsZSI6bnVsbCwiZmlvIjoiVEFTSFBVTEFUT1YgUkFNQVpJRERJTiBTQU1BUklERElOT1ZJQ0giLCJwYXNzcG9ydCI6eyJudW1iZXIiOm51bGwsImlzc3VlZGJ5IjpudWxsLCJkYXRlb2Zpc3N1ZSI6bnVsbH0sImFnZW50dGluIjoiMzIyMDk2MDAyMjEyMDMiLCJhZ2VudGVtcG93ZXJtZW50aWQiOiI2NGY3MDQyZmM3NmYwYjBmZTQwZTAyYmEifSwic2VsbGVydGluIjoiMzA0NDI2MTU0Iiwic2VsbGVyIjp7Im5hbWUiOiJcIlNUQVJMQUJcIiBNQ0hKIiwiYnJhbmNoY29kZSI6IiIsImJyYW5jaG5hbWUiOiIiLCJhY2NvdW50IjoiMjAyMDgwMDAyMDA2OTE2MTUwMDEiLCJiYW5raWQiOiIwMDQ0NiIsImFkZHJlc3MiOiJFIE1BVlpFLCA5ICAiLCJkaXJlY3RvciI6IlVNQVJPViBYVVNOSVRESU4gTlVSSURESU5PVklDSCIsImFjY291bnRhbnQiOiJVTUFST1YgWFVTTklURElOIE5VUklERElOT1ZJQ0gifSwiYnV5ZXJ0aW4iOiIzMDU5MDc2MzkiLCJwcm9kdWN0bGlzdCI6eyJ0aW4iOiIzMDU5MDc2MzkiLCJoYXNleGNpc2UiOmZhbHNlLCJoYXN2YXQiOnRydWUsInByb2R1Y3RzIjpbeyJvcmRubyI6MSwiY2F0YWxvZ2NvZGUiOiIiLCJjYXRhbG9nbmFtZSI6IiIsIm5hbWUiOiLQn9GA0L7Qs9GA0LDQvNC80L3QvtC1INC+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",
+        "stateId": 15,
+        "subType": "empowerment",
+        "targetTins": [
+            {
+                "tin": "32209600221203",
+                "name": "TASHPULATOV RAMAZIDDIN SAMARIDDINOVICH",
+                "signed": 1,
+                "side": "agent"
+            },
+            {
+                "tin": "304426154",
+                "name": "\"STARLAB\" MCHJ",
+                "branch": null,
+                "signed": 0,
+                "side": "seller"
             }
-        }
+        ],
+        "totalDocSum": 0,
+        "totalFuelSum": 0,
+        "totalSum": 0,
+        "totalSumWithVat": 0,
+        "totalVatSum": 0,
+        "updatedAt": "2023-09-05T11:11:32.403Z",
+        "baseDocs": []
     }
+    
     return (
         <Fragment>
             <Breadcrumbs mainTitle='Invoice' parent='Pages' title='Invoice' />
-            <PDFfactura data={jsonData} />
+            {/* <PDFfactura data={jsonData} /> */}
+            <PDFempowerment data={jsonData} />
         </Fragment>
     )
 }
