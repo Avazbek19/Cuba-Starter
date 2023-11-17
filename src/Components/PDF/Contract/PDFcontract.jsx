@@ -3,11 +3,11 @@ import { Btn } from '../../../AbstractElements';
 import { Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { useReactToPrint } from 'react-to-print';
-import Factura from './Factura';
+import Contract from './Contract';
 
 
 
-export default function PDFfactura({ data }) {
+export default function PDFcontract({ data }) {
     const componentRef = useRef();
 
     const handlePrint = useReactToPrint({
@@ -17,7 +17,7 @@ export default function PDFfactura({ data }) {
     return (
         <Fragment>
             <section ref={componentRef} className='p-3'>
-                <Factura data={data} />
+                <Contract data={data} />
             </section>
             <Col sm="12" className="text-center my-5 pt-5">
                 <Btn attrBtn={{ color: 'primary', className: 'me-2', onClick: handlePrint }}>

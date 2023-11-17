@@ -1,78 +1,3 @@
-.table-calculation {
-    border: 1px solid darkgray(210, 14%, 89%);
-}
-
-.tr-calculation {
-    vertical-align: middle;
-}
-
-.tr-calculation-1 {
-    background: #dee2e6;
-}
-
-.tr-calculation td {
-    border: 1px solid #959596;
-}
-
-.tr-calculation td div:nth-child(1) {
-    border: none;
-    background: transparent;
-}
-
-.tr-calculation td div:nth-child(2) {
-    border: none;
-    background: transparent;
-    border-left: 1px solid #959596;
-}
-
-.trrr {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-}
-
-.trrr .div1 {
-    width: 100%;
-    text-align: center;
-    border-bottom: 1px solid #959596 !important;
-}
-
-.trrr .div2 {
-    width: calc(40% - 10px);
-    text-align: center;
-    vertical-align: middle;
-    border: none;
-}
-
-.trrr .div3 {
-    width: calc(60% - 2px);
-    text-align: center;
-    border: none;
-    border-left: 1px solid #959596;
-    background-color: transparent;
-}
-
-.trrr1 {
-    display: flex;
-    flex-wrap: wrap;
-    width: 190px;
-}
-
-.div11 {
-    width: 50%;
-    height: max-content;
-}
-
-.div12 {
-    width: 50%;
-    height: max-content;
-}
-
-.table-calculation td {
-    text-align: center;
-    vertical-align: middle;
-}
-
 .table tr td {
     vertical-align: middle;
     padding: 0;
@@ -91,12 +16,6 @@
     background: #f8f8f8;
 }
 
-.stamp-buyer {
-    border: 8px solid #1ab394;
-    border-radius: 15px;
-    background: #e8f7f4;
-}
-
 .stamp-send-1 {
     color: #bbbdbd;
     text-align: center;
@@ -105,10 +24,25 @@
     word-spacing: 1px;
 }
 
+.stamp-buyer {
+    border: 8px solid #1ab394;
+    border-radius: 15px;
+    background: #e8f7f4;
+}
+
 .stamp-send-2 {
     color: #1ab394;
     text-align: center;
     margin: 0;
     font-size: 20px;
     word-spacing: 1px;
+}
+
+/* ДОВЕРЕННОСТЬ style --------------------------------------------------------------- */
+
+.table-border td  {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgb(122, 122, 122);
+    padding: 5px !important;
 }

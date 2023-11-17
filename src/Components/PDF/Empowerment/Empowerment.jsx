@@ -16,6 +16,18 @@ export default function Empowerment({ data }) {
         return formattedDate;
     };
 
+    function convertDateFormat(isoDateString) {
+        const date = new Date(isoDateString);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const hours = String(date.getHours()).padStart(2, '0');
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const seconds = String(date.getSeconds()).padStart(2, '0');
+        const newDateFormat = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+        return newDateFormat;
+    }
+
     return (
         <div>
             <div className='pdf-send-id'>
@@ -31,19 +43,88 @@ export default function Empowerment({ data }) {
             </div>
             <div className='row justify-content-center'>
                 <div className='col-7'>
-                    <tbody className='table table-bordered'>
+                    <div className='d-flex gap-3'>
+                        <ul>
+                            <li>
+                                <p style={boldTextStyle} className='m-0 p-0'>Доверенность выдана:</p>
+                            </li>
+                            <li>
+                                <p style={boldTextStyle} className='m-0 p-0'>На получение от:</p>
+                            </li>
+                            <li>
+                                <p style={boldTextStyle} className='m-0 p-0'>Материальных ценностей по:</p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <p className='m-0 p-0 border-bottom'>{datas.agent.fio}, ИНН/ПИНФЛ {datas.agent.agenttin}</p>
+                            </li>
+                            <li>
+                                <p className='m-0 p-0 border-bottom'>{datas.seller.name}</p>
+                            </li>
+                            <li>
+                                <p className='m-0 p-0 border-bottom'>Договор № {datas.contractdoc.contractno} от {formatDate(datas.contractdoc.contractdate)}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div className='mt-5'>
+                <h6 className='text-center my-3'>Перечень товарно-материальных ценностей, подлежащих получению</h6>
+                <table className="table table-border">
+                    <tbody>
                         <tr>
-                            <td>
-                                <h6 className='m-0 p-0 bg-transparent text-dark'>Доверенность выдана: </h6>
-                            </td>
-                            <td>{datas.agent.fio}, ИНН/ПИНФЛ {datas.agent.agenttin}</td>
+                            <td>п/п</td>
+                            <td>Идентификационный код и название по Единому электронному
+                                национальному каталогу товаров (услуг)</td>
+                            <td>Наименование товаров (услуг) </td>
+                            <td>Ед. изм.</td>
+                            <td>Количество</td>
                         </tr>
-                        <tr>
-                            <td>
-                                <h6 className='m-0 p-0 bg-transparent text-dark'>На получение от:</h6>
-                            </td>
-                        </tr>
+                        {
+                            datas.productlist.products.map((product, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{index + 1}</td>
+                                        <td>{product.catalogname}</td>
+                                        <td>{product.name}</td>
+                                        <td>штук</td>
+                                        <td>{product.count}</td>
+                                    </tr>
+                                )
+                            })
+                        }
                     </tbody>
+                </table>
+            </div>
+            <div className='my-4 d-flex gap-4'>
+                <ul>
+                    <li>
+                        <p style={boldTextStyle}>Руководитель:</p>
+                    </li>
+                    <li>
+                        <p style={boldTextStyle}>Главный бухгалтер:</p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <p>{datas.buyer.director}</p>
+                    </li>
+                    <li>
+                        <p>{datas.buyer.accountant}</p>
+                    </li>
+                </ul>
+            </div>
+            <div className='stamps row justify-content-between mt-4'>
+                <div className='col-4 col-xl-3 stamp-seller'>
+                    <div className='row justify-content-between'>
+                        <p className='col-5 text-start m-0 p-0'>SN:</p>
+                        <p className='col-5 text-end m-0 p-0'>{convertDateFormat(data.createdAt)}</p>
+                    </div>
+                    <div className='stamp-send-1'>ОТПРАВЛЕН</div>
+                    <p className='m-0 p-0 text-center'>{data.ownerName}</p>
+                    <p className='m-0 p-0 text-center'>{datas.buyer.director}</p>
+                    <p className='m-0 p-0 text-center'>ИНН/ПИНФЛ: </p>
                 </div>
             </div>
         </div>

@@ -9,18 +9,18 @@ export const MENUITEMS = [
         type: 'sub',
         active: false,
         children: [
-          {  path: `${process.env.PUBLIC_URL}/pages/sample-page`, title: 'Sample-Page', type: 'link'},
-          {  path: `${process.env.PUBLIC_URL}/pages/form`, title: 'Sample-Form', type: 'link'},
+          { path: `${process.env.PUBLIC_URL}/pages/sample-page`, title: 'Sample-Page', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/pages/form`, title: 'Sample-Form', type: 'link' },
         ],
       },
       {
         title: 'Colors',
         icon: 'form',
-        type: 'sub', 
+        type: 'sub',
         active: false,
         children: [
-          { path: `${process.env.PUBLIC_URL}/colors/colorr`, title: 'Color1', type: 'link'},
-          { path: `${process.env.PUBLIC_URL}/colors/colorg`, title: 'Color2', type: 'link'},
+          { path: `${process.env.PUBLIC_URL}/colors/colorr`, title: 'Color1', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/colors/colorg`, title: 'Color2', type: 'link' },
         ]
       },
       {
@@ -29,8 +29,8 @@ export const MENUITEMS = [
         type: 'sub',
         active: false,
         children: [
-          { path: `${process.env.PUBLIC_URL}/setting/setting-customize`, title: 'Customize Settings', type : 'link'},
-          { path: `${process.env.PUBLIC_URL}/setting/json-saver`, title: 'Add Language', type: 'link'},
+          { path: `${process.env.PUBLIC_URL}/setting/setting-customize`, title: 'Customize Settings', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/setting/json-saver`, title: 'Add Language', type: 'link' },
         ]
       },
       {
@@ -39,7 +39,8 @@ export const MENUITEMS = [
         type: 'sub',
         active: false,
         children: [
-          { path: `${process.env.PUBLIC_URL}/pdf/informations`, title: 'PDF view', type: 'link' }
+          { path: `${process.env.PUBLIC_URL}/pdf/informations`, title: 'PDF view', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/pdf/document-creator`, title: 'Document Creator', type: 'link' }
         ]
       }
     ],

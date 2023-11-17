@@ -176,71 +176,66 @@ export default function Factura({ data }) {
                 </div>
             </div>
             <div className='my-2'>
-                <tbody className='table table-calculation'>
-                    <tr className='tr-calculation-1 tr-calculation text-center '>
-                        <td className='td-calculation-1'>п/п</td>
-                        <td className='td-calculation-2'>Наименование товаров (услуг)</td>
-                        <td>Идентификационный код и название
-                            по Единому электронному
-                            национальному каталогу товаров
-                            (услуг)
-                        </td>
-                        <td>Штрихкод
-                            товаров
-                            (услуг)
-                        </td>
-                        <td>Ед. изм.</td>
-                        <td>Количество</td>
-                        <td>Цена</td>
-                        <td>Стоимость
-                            поставки
-                        </td>
-                        <td class="trrr">
-                            <div class="div1">НДС</div>
-                            <div class="div2">ставка</div>
-                            <div class="div3">сумма</div>
-                        </td>
-                        <td >
-                            Стоимость
-                            поставки с учетом НДС
-                        </td>
-                    </tr>
-                    {
-                        datas.productlist.products.map((product, index) => {
-                            return (
-                                <tr className='tr-calculation' key={index}>
-                                    <td>{index + 1}</td>
-                                    <td>{product.name}</td>
-                                    <td>{product.catalogcode} - {product.catalogname}</td>
-                                    <td>{product.barcode}</td>
-                                    <td>{product.packagename}</td>
-                                    <td>{product.count}</td>
-                                    <td style={{ width: '150px' }}>{numberToFormattedString(product.summa)}</td>
-                                    <td>{numberToFormattedString(product.deliverysum)}</td>
-                                    <td className='trrr1'>
-                                        <div className='div11'>{numberToFormattedString(product.vatrate)}</div>
-                                        <div className='div12'>{numberToFormattedString(product.vatsum)}</div>
-                                    </td>
-                                    <td>{numberToFormattedString(product.deliverysumwithvat)}</td>
-                                </tr>
-                            )
-                        })
-                    }
-                    <tr className='tr-calculation'>
-                        <td colSpan='7' className='text-start'>Итого:</td>
-                        <td>{numberToFormattedString(data.totalSum)}</td>
-                        <td className='d-flex'>
-                            <div style={{ padding: '10px' }}>x</div>
-                            <div style={{ width: '100%', padding: '8px' }}>{numberToFormattedString(data.totalVatSum)}</div>
-                        </td>
-                        <td>{numberToFormattedString(data.totalDocSum)}</td>
-                    </tr>
-                    <tr className='tr-calculation'>
-                        <td colSpan='10' className='text-start'>
-                            <p className='m-0 bg-transparent text-dark' style={boldTextStyle}>Всего к оплате: {numberToWordsRu(data.totalSumWithVat)} сум, в том числе НДС {numberToFormattedString(data.totalVatSum)}</p>
-                        </td>
-                    </tr>
-                </tbody>
+                <table class="table table-border">
+                    <tbody>
+                        <tr>
+                            <td>п/п</td>
+                            <td>Наименование товаров (услуг)</td>
+                            <td>Идентификационный код и название
+                                по Единому электронному
+                                национальному каталогу товаров
+                                (услуг)
+                            </td>
+                            <td>Штрихкод
+                                товаров
+                                (услуг)
+                            </td>
+                            <td>Ед. изм.</td>
+                            <td>Количество</td>
+                            <td>Цена</td>
+                            <td>Стоимость
+                                поставки
+                            </td>
+                            <td>ставка</td>
+                            <td>сумма</td>
+                            <td >
+                                Стоимость
+                                поставки с учетом НДС
+                            </td>
+                        </tr>
+                        {
+                            datas.productlist.products.map((product, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <td>{index + 1}</td>
+                                        <td>{product.name}</td>
+                                        <td>{product.catalogcode} - {product.catalogname}</td>
+                                        <td>{product.barcode}</td>
+                                        <td>{product.packagename}</td>
+                                        <td>{product.count}</td>
+                                        <td style={{ width: '150px' }}>{numberToFormattedString(product.summa)}</td>
+                                        <td>{numberToFormattedString(product.deliverysum)}</td>
+                                        <td>{numberToFormattedString(product.vatrate)}</td>
+                                        <td>{numberToFormattedString(product.vatsum)}</td>
+                                        <td>{numberToFormattedString(product.deliverysumwithvat)}</td>
+                                    </tr>
+                                )
+                            })
+                        }
+                        <tr>
+                            <td colSpan='7' className='text-start'>Итого:</td>
+                            <td>{numberToFormattedString(data.totalSum)}</td>
+                            <td>x</td>
+                            <td>{numberToFormattedString(data.totalVatSum)}</td>
+                            <td>{numberToFormattedString(data.totalDocSum)}</td>
+                        </tr>
+                        <tr>
+                            <td colSpan='11'>
+                                <p className='m-0 text-start' style={boldTextStyle}>Всего к оплате: {numberToWordsRu(data.totalSumWithVat)} сум, в том числе НДС {numberToFormattedString(data.totalVatSum)}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div className='row mt-5'>
                 <div className='col-6 p-0 d-flex gap-4'>
