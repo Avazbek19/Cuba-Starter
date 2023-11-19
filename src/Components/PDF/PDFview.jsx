@@ -4,7 +4,7 @@ import { json_fac, json_actwork, json_actgoods, json_contract, json_empowerment 
 import PDFfactura from './Factura/PDFfactura';
 import PDFempowerment from './Empowerment/PDFempowerment';
 import PDFcontract from './Contract/PDFcontract';
-import './PDFstyles.css';
+import './PdfStyles.css';
 import PDFactgoods from './ActGoods/PDFactgoods';
 import PDFactwork from './ActWork/PDFactwork';
 

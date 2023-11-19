@@ -25,7 +25,7 @@ export default function DocCreate() {
             <div className='select-type-doc'>
                 <p className='doc-element-title'>Документ:</p>
                 <select className='form-select w-25' value={selectedDoc} onChange={handleSelectChange} aria-label="Default select example">
-                    <option disabled selected>Выберите тип документа</option>
+                    <option disabled selected value=''>Выберите тип документа</option>
                     <option value="contract">Договор (ГНК)</option>
                 </select>
             </div>

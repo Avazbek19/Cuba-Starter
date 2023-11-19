@@ -15,21 +15,38 @@
     position: relative;
 }
 
-.box-of-input input {
+.input-animation {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    transition: 0.4s;
+    background: transparent;
     outline: none;
+}
+
+.input-animation:focus {
+    box-shadow: 0 0 5px 0.1px black;
 }
 
 .box-of-input span {
     position: absolute;
-    top: 7px;
-    left: 10px;
+    top: -11px;
+    left: 20px;
     padding: 0;
     pointer-events: none;
     transition: 0.4s;
+    background: #f7f8f9;
 }
 
-.box-of-input input:valid ~ span,
-.box-of-input input:focus ~ span {
-    transform: translateY(-26px);
-    background: transparent; 
+.btn-no-name {
+    border: none;
+    background: transparent;
+    font-size: 30px;
+}
+
+.text-y-center {
+    padding: 6px;
+    font-weight: 500;
+    font-size: 18px;
 }
