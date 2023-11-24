@@ -416,6 +416,17 @@ export default function FFactura() {
                     <div className={`row enter-more-info ${svernut2 ? 'svernut' : ''}`}>
                         <FTable />
                     </div>
+                    <div className='text-center'>
+                        <button type='submit' className='btn btn-outline-primary mx-2'>
+                            Сохранить
+                        </button>
+                        <button className='btn btn-outline-success mx-2'>
+                            Сохранить и подписать
+                        </button>
+                        <button className='btn btn-outline-secondary mx-2'>
+                            Назад
+                        </button>
+                    </div>
                 </form>
             </div>
         </Fragment>

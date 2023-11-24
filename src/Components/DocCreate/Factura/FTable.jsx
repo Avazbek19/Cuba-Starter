@@ -5,7 +5,6 @@ import { tableColumns2 } from '../Constants';
 
 
 export default function FTable() {
-    const [table, setTable] = useState('')
     const [tableData, setTableData] = useState([
         { id: 1, column1: '', column2: '', column3: '', column4: '', column5: '', column6: '', column7: '', column8: '', column9: '', column10: '', column11: '', column12: '', column13: '' }
     ]);
@@ -17,8 +16,10 @@ export default function FTable() {
     };
 
     const handleRemoveRow = (id) => {
-        const updatedTableData = tableData.filter(row => row.id !== id);
-        setTableData(updatedTableData);
+        if (tableData.length > 1) {
+            const updatedTableData = tableData.filter(row => row.id !== id);
+            setTableData(updatedTableData);
+        }
     }
     return (
         <div className='my-2'>
