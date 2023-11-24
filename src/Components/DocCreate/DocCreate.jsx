@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { Breadcrumbs } from '../../AbstractElements';
 import CContract from './Contract/CContract';
 import './DocCreate.css'
+import FFactura from './Factura/FFactura';
 
 export default function DocCreate() {
     const [selectedDoc, setSelectedDoc] = useState(null);
@@ -14,6 +15,8 @@ export default function DocCreate() {
         switch (selectedDoc) {
             case 'contract':
                 return <CContract />;
+            case 'factura':
+                return <FFactura />;
             default:
                 return null;
         }
@@ -27,6 +30,7 @@ export default function DocCreate() {
                 <select className='form-select w-25' value={selectedDoc} onChange={handleSelectChange} aria-label="Default select example">
                     <option disabled selected value=''>Выберите тип документа</option>
                     <option value="contract">Договор (ГНК)</option>
+                    <option value="factura">Счет-фактура </option>
                 </select>
             </div>
 

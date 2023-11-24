@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MdOutlinePlaylistAdd, MdOutlinePlaylistRemove } from "react-icons/md";
-import { tableColumns } from '../Constants';
+import { tableColumns1 } from '../Constants';
 
 
 
@@ -48,7 +48,7 @@ export default function CTable() {
                 <tbody>
                     <tr className='backround-tr'>
                         {
-                            tableColumns.map((item, index) => {
+                            tableColumns1.map((item, index) => {
                                 return (
                                     <td key={index}>{item}</td>
                                 )

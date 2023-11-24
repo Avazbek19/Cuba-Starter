@@ -123,7 +123,7 @@ export default function CContract() {
                             />
                             <span>Дата договора</span>
                         </div>
-                        <div className='col-6 col-md-3 box-of-input'>
+                        <div className='col-6 col-md-3'>
                             <input
                                 className='input-animation'
                                 type="text"
