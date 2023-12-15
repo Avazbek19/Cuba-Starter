@@ -3,6 +3,8 @@ import { Breadcrumbs } from '../../AbstractElements';
 import CContract from './Contract/CContract';
 import './DocCreate.css'
 import FFactura from './Factura/FFactura';
+import Empowerment from './Empowerment/Empowerment';
+import WorkDoneAct from './WorkDoneAct/WorkDoneAct';
 
 export default function DocCreate() {
     const [selectedDoc, setSelectedDoc] = useState(null);
@@ -17,6 +19,10 @@ export default function DocCreate() {
                 return <CContract />;
             case 'factura':
                 return <FFactura />;
+            case 'empowerment':
+                return <Empowerment />;
+            case 'workDoneAct':
+                return <WorkDoneAct />;
             default:
                 return null;
         }
@@ -31,6 +37,8 @@ export default function DocCreate() {
                     <option disabled selected value=''>Выберите тип документа</option>
                     <option value="contract">Договор (ГНК)</option>
                     <option value="factura">Счет-фактура </option>
+                    <option value="empowerment">Доверенность</option>
+                    <option value="workDoneAct">Акт выполненных работ</option>
                 </select>
             </div>
 

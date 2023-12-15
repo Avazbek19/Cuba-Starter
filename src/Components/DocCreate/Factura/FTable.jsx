@@ -10,8 +10,8 @@ export default function FTable() {
     ]);
 
     const handleAddRow = () => {
-        const newId = tableData.length + 1;
-        const newRow = { id: newId, column1: '', column2: '', };
+        const newId = tableData.length === 0 ? 1 : tableData[tableData.length - 1].id + 1;
+        const newRow = { id: newId, column1: '', column2: '', column3: '', column4: '', column5: '', column6: '', column7: '', column8: '', column9: '', column10: '', column11: '', column12: '', column13: '' };
         setTableData([...tableData, newRow]);
     };
 
@@ -38,20 +38,20 @@ export default function FTable() {
                 </div>
                 <div className="col-12">
                     <div className="form-check form-check-inline mt-5">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1" />
-                        <label className="form-check-label" for="inlineRadio1">НДС</label>
+                        <input className="form-check-input" type="radio" name="taxOptions" id="nds" value="nds" />
+                        <label className="form-check-label" htmlFor="nds">НДС</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2" />
-                        <label className="form-check-label" for="inlineRadio2">Товар маркирован</label>
+                        <input className="form-check-input" type="radio" name="taxOptions" id="productMar" value="productMar" />
+                        <label className="form-check-label" htmlFor="productMar">Товар маркирован</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3" />
-                        <label className="form-check-label" for="inlineRadio3">Обратный расчет</label>
+                        <input className="form-check-input" type="radio" name="taxOptions" id="reverseCalculation" value="reverseCalculation" />
+                        <label className="form-check-label" htmlFor="reverseCalculation">Обратный расчет</label>
                     </div>
                     <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="4" />
-                        <label className="form-check-label" for="inlineRadio3">Ручное вычисление</label>
+                        <input className="form-check-input" type="radio" name="taxOptions" id="manualCalculation" value="manualCalculation" />
+                        <label className="form-check-label" htmlFor="manualCalculation">Ручное вычисление</label>
                     </div>
                 </div>
             </div>

@@ -3,432 +3,202 @@ import { TiArrowMaximise, TiArrowMinimise } from "react-icons/ti";
 import FTable from './FTable';
 
 export default function FFactura() {
-    const [svernut1, setSvernut1] = useState(true);
-    const [svernut2, setSvernut2] = useState(true);
+  const [svernut1, setSvernut1] = useState(true);
+  const [svernut2, setSvernut2] = useState(true);
 
-    const [documentNumber, setDocumentNumber] = useState('');
-    const [dateDocument, setDateDocument] = useState('');
-    const [tthID, setTthID] = useState('')
-    const [contractID, setContractID] = useState('')
-    const [contractNumber, setContractNumber] = useState('')
-    const [contractDate, setContractDate] = useState('')
-    const [pinfPhis, setPinfPhis] = useState('')
-    const [fullName, setFullName] = useState('')
+  const [formData, setFormData] = useState({
+    documentNumber: '',
+    dateDocument: '',
+    tthID: '',
+    contractID: '',
+    contractNumber: '',
+    contractDate: '',
+    pinfPhis: '',
+    fullName: '',
+    organizationName: '',
+    vatPayer: '',
+    vatPayerStatus: '',
+    adress: '',
+    region: '',
+    district: '',
+    mobile: '',
+    mobileOffice: '',
+    bank: '',
+    check: '',
+    oked: '',
+    innPinf: '',
+    director: '',
+    accountant: '',
+  })
 
-    const [adress, setAdress] = useState('')
-    const [region, setRegion] = useState('')
-    const [district, setDistrict] = useState()
-    const [mobile, setMobile] = useState('')
-    const [mobileOffice, setMobileOffice] = useState('')
-    const [bank, setBank] = useState('')
-    const [check, setCheck] = useState('')
-    const [oked, setOked] = useState('')
-    const [innPinf, setInnPinf] = useState('')
-    const [director, setDirector] = useState('')
-    const [accountant, setAccountant] = useState('')
-    const [recipients, setRecipients] = useState([
-        { recipient: '', innPinf: '', organizationName: '', basedOn: '' }
-    ])
+  const [recipients, setRecipients] = useState({
+    region: '',
+    district: '',
+    mobile: '',
+    mobileOffice: '',
+    bank: '',
+    check: '',
+    oked: '',
+    innPinf: '',
+    director: '',
+    accountant: '',
+    adress: ''
+  })
 
-    const toggleSvernut = (number) => {
-        if (number === 1) {
-            setSvernut1(!svernut1);
-        } else {
-            setSvernut2(!svernut2)
-        }
-    };
-
-    function handleSubmit(e) {
-        e.preventDefault()
+  const toggleSvernut = (number) => {
+    if (number === 1) {
+      setSvernut1(!svernut1);
+    } else {
+      setSvernut2(!svernut2)
     }
+  };
 
-    const handleInputChange2 = (index, field, value) => {
-        const newRecipients = [...recipients];
-        newRecipients[index][field] = value;
-        setRecipients(newRecipients);
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("formData =>", formData, recipients);
+  };
 
-    return (
-        <Fragment>
-            <div className="my-5 p-2">
-                <form action="" onSubmit={handleSubmit}>
-                    <div className="row mt-2">
-                        <div className='col-6 col-md-3'>
-                            <input
-                                className='input-animation'
-                                type="number"
-                                placeholder='№ документа'
-                                value={documentNumber}
-                                onChange={(e) => setDocumentNumber(e.target.value)}
-                            />
-                        </div>
-                        <div className='col-6 col-md-3'>
-                            <input
-                                className='input-animation'
-                                type="date"
-                                value={dateDocument}
-                                onChange={(e) => setDateDocument(e.target.value)}
-                            />
-                        </div>
-                    </div>
-                    <div className="row mt-2">
-                        <div className='col-6 col-md-3'>
-                            <input
-                                className='input-animation'
-                                type="number"
-                                placeholder='ТТН ID'
-                                value={tthID}
-                                onChange={(e) => setTthID(e.target.value)}
-                            />
-                        </div>
-                        <div className='col-6 col-md-3'>
-                            <input
-                                className='input-animation'
-                                type="number"
-                                placeholder='Договор ID'
-                                value={contractID}
-                                onChange={(e) => setContractID(e.target.value)}
-                            />
-                        </div>
-                    </div>
-                    <p className='doc-element-title mt-4'>Договор:</p>
-                    <div className="row mt-2">
-                        <div className='col-6 col-md-3'>
-                            <input className='input-animation' type="number" placeholder='№ договора' value={contractNumber} onChange={(e) => setContractNumber(e.target.value)} />
-                        </div>
-                        <div className='col-6 col-md-3'>
-                            <input
-                                className='input-animation'
-                                type="date"
-                                value={contractDate}
-                                onChange={(e) => setContractDate(e.target.value)}
-                            />
-                        </div>
-                    </div>
-                    <p className='doc-element-title mt-4'>Товар отпустил:</p>
-                    <div className="row mt-2">
-                        <div className='col-6 col-md-3'>
-                            <input
-                                className='input-animation'
-                                type="number"
-                                placeholder='ПИНФЛ (физ. лица) '
-                                value={pinfPhis}
-                                onChange={(e) => setPinfPhis(e.target.value)}
-                            />
-                        </div>
-                        <div className='col-6 col-md-3'>
-                            <input
-                                className='input-animation'
-                                type="text"
-                                value={fullName}
-                                placeholder='Полное имя (ФИО)'
-                                onChange={(e) => setFullName(e.target.value)}
-                            />
-                        </div>
-                    </div>
-                    <div className='row mt-2 justify-content-end'>
-                        <div className="col-12 col-md-6">
-                            <p className='doc-element-title mt-4'>Продавец*</p>
-                            <div className="form-check form-check-inline mt-3">
-                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                                <label className="form-check-label" for="inlineRadio1">Комиссионер</label>
-                            </div>
-                            <div className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
-                                <label className="form-check-label" for="inlineRadio2">Акциз</label>
-                            </div>
-                            <div className="form-check form-check-inline">
-                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" />
-                                <label className="form-check-label" for="inlineRadio3">Фарм</label>
-                            </div>
-                            <input className='input-animation mt-3' type="number" placeholder='№ договора' value={contractNumber} onChange={(e) => setContractNumber(e.target.value)} />
-                            <input className='input-animation mt-3' type="number" placeholder='Плательщик НДС+ (сертификат активный)' value={contractNumber} onChange={(e) => setContractNumber(e.target.value)} />
-                            <input className='input-animation mt-3' type="text" placeholder='Наименование' value={contractNumber} onChange={(e) => setContractNumber(e.target.value)} />
-                        </div>
-                        <div className="col-12 col-md-6">
-                            <p className='doc-element-title mt-4'>Покупатель</p>
-                            <div className="form-check form-check-inline mt-3">
-                                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
-                                <label className="form-check-label" for="inlineRadio1">Поручитель</label>
-                            </div>
-                            <input className='input-animation mt-3' type="number" placeholder='№ договора' value={contractNumber} onChange={(e) => setContractNumber(e.target.value)} />
-                            <input className='input-animation mt-3' type="number" placeholder='Плательщик НДС+ (сертификат активный)' value={contractNumber} onChange={(e) => setContractNumber(e.target.value)} />
-                            <input className='input-animation mt-3' type="text" placeholder='Наименование' value={contractNumber} onChange={(e) => setContractNumber(e.target.value)} />
-                        </div>
-                        <div className="col-6">
-                            <select className='mt-3 input-animation' name="" id="">
-                                <option value="">Подразделение</option>
-                                <option value="">1</option>
-                                <option value="">2</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div className="col-12 mt-3 d-flex justify-content-between mt-5">
-                        <span className='text-y-center'>Реквизиты сторон</span>
-                        <button onClick={() => toggleSvernut(1)} className='btn-no-name'>
-                            {svernut1 ? <TiArrowMaximise /> : <TiArrowMinimise />}
-                        </button>
-                    </div>
-                    <div className={`row enter-more-info ${svernut1 ? 'svernut' : ''}`}>
-                        <div className="row col-6">
-                            <div className="col-12">
-                                <p className='doc-element-title px-1'>Продавец* </p>
-                            </div>
-                            <div className='col-12 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={region}
-                                    onChange={(e) => setRegion(e.target.value)}
-                                />
-                                <span>Регион</span>
-                            </div>
-                            <div className='col-12 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={district}
-                                    onChange={(e) => setDistrict(e.target.value)}
-                                />
-                                <span>Район</span>
-                            </div>
-                            <div className='col-12 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={adress}
-                                    onChange={(e) => setAdress(e.target.value)}
-                                />
-                                <span>Адрес</span>
-                            </div>
-                            <div className='col-12 col-lg-6 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="number"
-                                    required
-                                    value={mobile}
-                                    onChange={(e) => setMobile(e.target.value)}
-                                />
-                                <span>Мобильный</span>
-                            </div>
-                            <div className='col-12 col-lg-6 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="number"
-                                    required
-                                    value={mobileOffice}
-                                    onChange={(e) => setMobileOffice(e.target.value)}
-                                />
-                                <span>Мобильный</span>
-                            </div>
-                            <div className='col-12 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={bank}
-                                    onChange={(e) => setBank(e.target.value)}
-                                />
-                                <span>Банк</span>
-                            </div>
-                            <div className='col-12 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={check}
-                                    onChange={(e) => setCheck(e.target.value)}
-                                />
-                                <span>Счет</span>
-                            </div>
-                            <div className='col-12 mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={oked}
-                                    placeholder='ОКЭД'
-                                    onChange={(e) => setOked(e.target.value)}
-                                />
-                            </div>
-                            <div className='col-12 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={innPinf}
-                                    onChange={(e) => setInnPinf(e.target.value)}
-                                />
-                                <span>Код плательщика НДС</span>
-                            </div>
-                            <div className='col-12 box-of-input mt-3'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={director}
-                                    onChange={(e) => setDirector(e.target.value)}
-                                />
-                                <span>Директор</span>
-                            </div>
-                            <div className='col-12 mt-3 box-of-input'>
-                                <input
-                                    className='input-animation'
-                                    type="text"
-                                    required
-                                    value={accountant}
-                                    onChange={(e) => setAccountant(e.target.value)}
-                                />
-                                <span>гл. Бухгалтер</span>
-                            </div>
-                        </div>
-                        {
-                            recipients.map((item, index) => {
-                                return (
-                                    <div key={index} className="row col-6">
-                                        <div className="col-12">
-                                            <p className='doc-element-title px-1'>Покупатель</p>
-                                        </div>
-                                        <div className='col-12 box-of-input mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                value={region}
-                                                onChange={(e) => setRegion(e.target.value)}
-                                            />
-                                            <span>Регион</span>
-                                        </div>
-                                        <div className='col-12 box-of-input mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                value={district}
-                                                onChange={(e) => setDistrict(e.target.value)}
-                                            />
-                                            <span>Район</span>
-                                        </div>
-                                        <div className='col-12 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                placeholder='Адрес'
-                                                value={item.address}
-                                                onChange={(e) => handleInputChange2(index, 'addressC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 col-lg-6 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="number"
-                                                required
-                                                placeholder='Мобильный'
-                                                value={item.mobile}
-                                                onChange={(e) => handleInputChange2(index, 'mobileC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 col-lg-6 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="number"
-                                                required
-                                                placeholder='Мобильный'
-                                                value={item.officeMobile}
-                                                onChange={(e) => handleInputChange2(index, 'officeMobileC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                placeholder='Банк'
-                                                value={item.bankC}
-                                                onChange={(e) => handleInputChange2(index, 'bankC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                placeholder='Счет'
-                                                value={item.check}
-                                                onChange={(e) => handleInputChange2(index, 'checkC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                value={item.oked}
-                                                placeholder='ОКЭД'
-                                                onChange={(e) => handleInputChange2(index, 'okedC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                placeholder='Код плательщика НДС'
-                                                value={item.innPinf}
-                                                onChange={(e) => handleInputChange2(index, 'innPinfC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                placeholder='Директор'
-                                                value={item.recipients}
-                                                onChange={(e) => handleInputChange2(index, 'recipientsC', e.target.value)}
-                                            />
-                                        </div>
-                                        <div className='col-12 mt-3'>
-                                            <input
-                                                className='input-animation'
-                                                type="text"
-                                                required
-                                                value={item.position}
-                                                placeholder='гл. Бухгалтер'
-                                                onChange={(e) => handleInputChange2(index, 'positionC', e.target.value)}
-                                            />
-                                        </div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                    <div className="col-12 mt-3 d-flex justify-content-between">
-                        <span className='text-y-center'>Доверенность</span>
-                        <button onClick={() => toggleSvernut(2)} className='btn-no-name'>
-                            {svernut2 ? <TiArrowMaximise /> : <TiArrowMinimise />}
-                        </button>
-                    </div>
-                    <div className={`row enter-more-info ${svernut2 ? 'svernut' : ''}`}>
-                        <FTable />
-                    </div>
-                    <div className='text-center'>
-                        <button type='submit' className='btn btn-outline-primary mx-2'>
-                            Сохранить
-                        </button>
-                        <button className='btn btn-outline-success mx-2'>
-                            Сохранить и подписать
-                        </button>
-                        <button className='btn btn-outline-secondary mx-2'>
-                            Назад
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </Fragment>
-    )
+  const handleInputChange = (e, fieldName) => {
+    const { value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [fieldName]: value }));
+  };
+
+  const renderInput1 = (label, value, onChange, fieldName) => (
+    <input className='input-animation mt-2' type="text" placeholder={label} value={value} onChange={(e) => onChange(e, fieldName)} />
+  );
+
+  const renderInput2 = (label, value, onChange, fieldName) => (
+    <input className='input-animation mt-2' type="number" placeholder={label} value={value} onChange={(e) => onChange(e, fieldName)} />
+  )
+
+  const renderInput3 = (label, value, onChange, fieldName) => (
+    <input className='input-animation mt-2' type="date" placeholder={label} value={value} onChange={(e) => onChange(e, fieldName)} />
+  )
+
+  const renderColumn = (size, fields) => <div className={`col-6 col-md-${size}`}>{fields}</div>;
+  const renderColumnNoSize = (fields) => <div className='col-12'>{fields}</div>;
+
+  const renderRow1 = (fields) => <div className="row mt-2">{fields}</div>;
+  const renderRow2 = (fields) => <div className={`row mt-5 enter-more-info ${svernut1 ? 'svernut' : ''}`}>{fields}</div>
+  const renderRow3 = (fields) => <div className='row col-6'>{fields}</div>
+  const renderRow4 = (fields) => <div className={`row mt-5 enter-more-info ${svernut2 ? 'svernut' : ''}`}>{fields}</div>
+
+
+  return (
+    <Fragment>
+      <div className='my-5 p-2'>
+        <form action="" onSubmit={handleSubmit}>
+          {renderRow1([
+            renderColumn(3, renderInput2('№ документа', formData.documentNumber, handleInputChange, 'documentNumber')),
+            renderColumn(3, renderInput3('', formData.dateDocument, handleInputChange, 'dateDocument'))
+          ])}
+
+          {renderRow1([
+            renderColumn(3, renderInput2('ТТН ID', formData.tthID, handleInputChange, 'tthID')),
+            renderColumn(3, renderInput2('Договор ID', formData.contractID, handleInputChange, 'contractID')),
+          ])}
+
+          <p className='doc-element-title mt-4'>Договор:</p>
+
+          {renderRow1([
+            renderColumn(3, renderInput2('№ договора', formData.contractNumber, handleInputChange, 'contractNumber')),
+            renderColumn(3, renderInput3('', formData.contractDate, handleInputChange, 'contractDate'))
+          ])}
+
+          <p className='doc-element-title mt-4'>Товар отпустил:</p>
+
+          {renderRow1([
+            renderColumn(3, renderInput2('ПИНФЛ (физ. лица)', formData.pinfPhis, handleInputChange, 'pinfPhis')),
+            renderColumn(3, renderInput1('Полное имя (ФИО)', formData.fullName, handleInputChange, 'fullName'))
+          ])}
+
+          {renderRow1([
+            renderColumn(6, <>
+              <p className='doc-element-title mt-4'>Продавец*</p>
+              <div className="form-check form-check-inline mt-3">
+                <input className="form-check-input" type="radio" name="sellerType" id="sellerTypeCommissioner" value="commissioner" />
+                <label className="form-check-label" htmlFor="sellerTypeCommissioner">Комиссионер</label>
+              </div>
+              <div className="form-check form-check-inline">
+                <input className="form-check-input" type="radio" name="sellerType" id="sellerTypeExcise" value="excise" />
+                <label className="form-check-label" htmlFor="sellerTypeExcise">Акциз</label>
+              </div>
+              <div className="form-check form-check-inline">
+                <input className="form-check-input" type="radio" name="sellerType" id="sellerTypePharm" value="pharm" />
+                <label className="form-check-label" htmlFor="sellerTypePharm">Фарм</label>
+              </div>
+              {renderInput2('№ договора', formData.contractNumber, handleInputChange, 'contractNumber')}
+              {renderInput2('Плательщик НДС+ (сертификат активный)', formData.vatPayer, handleInputChange, 'vatPayer')}
+              {renderInput1('Наименование', formData.organizationName, handleInputChange, 'organizationName')}
+            </>),
+            renderColumn(6, <>
+              <p className='doc-element-title mt-4'>Покупатель</p>
+              <div className="form-check form-check-inline mt-3">
+                <input className="form-check-input" type="radio" name="buyerType" id="buyerTypeGuarantor" value="guarantor" />
+                <label className="form-check-label" htmlFor="buyerTypeGuarantor">Поручитель</label>
+              </div>
+              {renderInput2('№ договора', formData.contractNumber, handleInputChange, 'contractNumber')}
+              {renderInput2('Статус плательщика НДС', formData.vatPayer, handleInputChange, 'vatPayer')}
+              {renderInput1('Наименование', formData.organizationName, handleInputChange, 'organizationName')}
+              <select className='mt-3 input-animation' name="" id="">
+                <option value="" disabled selected>Подразделение</option>
+                <option value="">1</option>
+                <option value="">2</option>
+              </select>
+            </>)
+          ])}
+          <div className="col-12 mt-3 d-flex justify-content-between mt-5">
+            <span className='text-y-center'>Реквизиты сторон</span>
+            <button onClick={() => toggleSvernut(1)} className='btn-no-name'>
+              {svernut1 ? <TiArrowMaximise /> : <TiArrowMinimise />}
+            </button>
+          </div>
+          {renderRow2([
+            renderRow3([
+              renderColumnNoSize(<p className='doc-element-title px-1'>Продавец </p>),
+              renderColumnNoSize(renderInput1('Регион', formData.region, handleInputChange, 'region')),
+              renderColumnNoSize(renderInput1('Район', formData.district, handleInputChange, 'district')),
+              renderColumnNoSize(renderInput1('Адрес', formData.adress, handleInputChange, 'adress')),
+              renderColumnNoSize(renderInput2('Мобильный', formData.mobile, handleInputChange, 'mobile')),
+              renderColumnNoSize(renderInput2('Мобильный', formData.mobileOffice, handleInputChange, 'mobileOffice')),
+              renderColumnNoSize(renderInput1('Банк', formData.bank, handleInputChange, 'bank')),
+              renderColumnNoSize(renderInput2('Счет', formData.check, handleInputChange, 'check')),
+              renderColumnNoSize(renderInput1('ОКЭД', formData.oked, handleInputChange, 'oked')),
+              renderColumnNoSize(renderInput1('Код плательщика НДС', formData.innPinf, handleInputChange, 'innPinf')),
+              renderColumnNoSize(renderInput1('Директор', formData.director, handleInputChange, 'director')),
+              renderColumnNoSize(renderInput1('гл. Бухгалтер', formData.accountant, handleInputChange, 'accountant'))
+            ]),
+            renderRow3([
+              renderColumnNoSize(<p className='doc-element-title px-1'>Покупатель </p>),
+              renderColumnNoSize(renderInput1('Регион', recipients.region, handleInputChange, 'region')),
+              renderColumnNoSize(renderInput1('Район', recipients.district, handleInputChange, 'district')),
+              renderColumnNoSize(renderInput1('Адрес', recipients.adress, handleInputChange, 'adress')),
+              renderColumnNoSize(renderInput2('Мобильный', recipients.mobile, handleInputChange, 'mobile')),
+              renderColumnNoSize(renderInput2('Мобильный', recipients.mobileOffice, handleInputChange, 'mobileOffice')),
+              renderColumnNoSize(renderInput1('Банк', recipients.bank, handleInputChange, 'bank')),
+              renderColumnNoSize(renderInput2('Счет', recipients.check, handleInputChange, 'check')),
+              renderColumnNoSize(renderInput1('ОКЭД', recipients.oked, handleInputChange, 'oked')),
+              renderColumnNoSize(renderInput1('Код плательщика НДС', recipients.innPinf, handleInputChange, 'innPinf')),
+              renderColumnNoSize(renderInput1('Директор', recipients.director, handleInputChange, 'director')),
+              renderColumnNoSize(renderInput1('гл. Бухгалтер', recipients.accountant, handleInputChange, 'accountant'))
+            ])
+          ])}
+          <div className="col-12 mt-3 d-flex justify-content-between">
+            <span className='text-y-center'>Доверенность</span>
+            <button onClick={() => toggleSvernut(2)} className='btn-no-name'>
+              {svernut2 ? <TiArrowMaximise /> : <TiArrowMinimise />}
+            </button>
+          </div>
+          {
+            renderRow4(<FTable />)
+          }
+          <div className='text-center mt-5'>
+            <button type='submit' className='btn btn-outline-primary mx-2'>Сохранит</button>
+            <button className='btn btn-outline-success mx-2'>Сохранить и подписать</button>
+            <button className='btn btn-outline-secondary mx-2'>Назад</button>
+          </div>
+        </form>
+      </div>
+    </Fragment>
+  )
 }

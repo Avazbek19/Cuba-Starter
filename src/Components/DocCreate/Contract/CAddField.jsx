@@ -8,14 +8,13 @@ export default function CAddField() {
     const [fields, setFields] = useState([
         {
             id: 1,
-            text: 'Дополнительное поле',
             svernut: false,
         },
     ]);
 
     const addField = () => {
         const newIndex = fields.length === 0 ? 1 : fields[fields.length - 1].id + 1;
-        setFields([...fields, { id: newIndex, text: '', svernut: false }]);
+        setFields([...fields, { id: newIndex, svernut: false }]);
     };
 
     const removeField = (id) => {
@@ -77,8 +76,6 @@ export default function CAddField() {
                                 id=""
                                 cols="30"
                                 rows="10"
-                                // value={field.text}
-                                // onChange={(e) => updateFieldText(field.id, e.target.value)}
                             ></textarea>
                         </div>
                     )}

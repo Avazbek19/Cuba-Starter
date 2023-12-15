@@ -1,54 +1,32 @@
 import React, { useState } from 'react'
 import { MdOutlinePlaylistAdd, MdOutlinePlaylistRemove } from "react-icons/md";
-import { tableColumns1 } from '../Constants';
+import { tableColumns4 } from '../Constants'
 
-
-
-export default function CTable() {
-    const [table, setTable] = useState('')
+export default function WTable() {
     const [tableData, setTableData] = useState([
-        { id: 1, column1: '', column2: '', column3: '', column4: '', column5: '', column6: '', column7: '', column8: '', column9: '', column10: '', column11: '', column12: '', column13: '' }
+        { id: 1, column1: '', column2: '', column3: '', column4: '', column5: '', column6: '', column7: '', column8: '', column9: '', column10: '', column11:''}
     ]);
 
     const handleAddRow = () => {
         const newId = tableData.length === 0 ? 1 : tableData[tableData.length - 1].id + 1;
-        const newRow = { id: newId, column1: '', column2: '', column3: '', column4: '', column5: '', column6: '', column7: '', column8: '', column9: '', column10: '', column11: '', column12: '', column13: '' };
+        const newRow = { id: newId, column1: '', column2: '', column3: '', column4: '', column5: '', column6: '', column7: '', column8: '', column9: '', column10: '', column11: ''};
         setTableData([...tableData, newRow]);
     };
 
     const handleRemoveRow = (id) => {
-        const updatedTableData = tableData.filter(row => row.id !== id);
-        setTableData(updatedTableData);
+        if (tableData.length > 1) {
+            const updatedTableData = tableData.filter(row => row.id !== id);
+            setTableData(updatedTableData);
+        }
     }
+
     return (
-        <div className='my-4'>
-            <div className='row align-items-center'>
-                <div className="col-2 row">
-                    <div className="col-4">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                        <label className="form-check-label" for="flexRadioDefault1">НДС </label>
-                    </div>
-                    <div className="col-8">
-                        <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-                        <label className="form-check-label" for="flexRadioDefault1">Обратный расчет</label>
-                    </div>
-                </div>
-                <div className='col-2 box-of-input'>
-                    <input
-                        className='input-animation'
-                        type="number"
-                        required
-                        value={table}
-                        onChange={(e) => setTable(e.target.value)}
-                    />
-                    <span>Положение таблицы</span>
-                </div>
-            </div>
+        <div className='my-5'>
             <table className="table my-4 table-border">
                 <tbody>
                     <tr className='backround-tr'>
                         {
-                            tableColumns1.map((item, index) => {
+                            tableColumns4.map((item, index) => {
                                 return (
                                     <td key={index}>{item}</td>
                                 )
@@ -75,8 +53,6 @@ export default function CTable() {
                             <td>{row.column7}</td>
                             <td>{row.column8}</td>
                             <td>{row.column9}</td>
-                            <td>{row.column10}</td>
-                            <td>{row.column11}</td>
                         </tr>
                     ))}
                 </tbody>

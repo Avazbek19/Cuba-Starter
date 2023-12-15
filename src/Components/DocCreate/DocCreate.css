@@ -27,17 +27,17 @@
 }
 
 .input-animation:focus {
-    box-shadow: 0 0 5px 0.1px black;
+    border: 1px solid black;
 }
 
-.box-of-input span {
+.box-of-input span{
     position: absolute;
     top: -11px;
     left: 20px;
     padding: 0;
     pointer-events: none;
     transition: 0.4s;
-    background: #f7f8f9;
+    background-color: white;
 }
 
 .btn-no-name {
@@ -54,7 +54,7 @@
 
 .enter-more-info {
     overflow: hidden;
-    max-height:2000px;
+    max-height: 2000px;
     transition: max-height 0.3s ease-in-out;
 }
 
@@ -84,6 +84,7 @@
     border-bottom: 2px solid rgba(0, 0, 0, 0.357);
     padding: 10px 0;
 }
+
 .index {
     width: 3%;
     text-align: center;
@@ -106,3 +107,27 @@
     width: 95%;
     text-align: center;
 }
+
+/* Empowerment doc create ----------------------------------------------------------------------------------------------- */
+
+.doubled {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.required {
+    border: 1px solid red; /* You can adjust the styling as needed */
+}
+
+/* @media screen and (max-width: 600px) {
+    .doubled-input {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .doubled-input {
+        width: calc(100% / 2 - 20px);
+    }
+} */
