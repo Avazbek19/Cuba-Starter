@@ -35,14 +35,15 @@ export const MENUITEMS = [
       },
       {
         title: 'PDF Viewer',
-        icon: 'layout',
+        icon: 'project',
         type: 'sub',
         active: false,
         children: [
           { path: `${process.env.PUBLIC_URL}/pdf/informations`, title: 'PDF view', type: 'link' },
-          { path: `${process.env.PUBLIC_URL}/pdf/document-creator`, title: 'Document Creator', type: 'link' }
+          { path: `${process.env.PUBLIC_URL}/pdf/document-creator`, title: 'Document Creator', type: 'link' },
+          { path: `${process.env.PUBLIC_URL}/pdf/created-documents`, title: 'Created documets', type: 'link' }
         ]
-      }
+      },
     ],
   },
 ];

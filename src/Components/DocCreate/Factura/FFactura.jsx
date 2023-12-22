@@ -15,8 +15,10 @@ export default function FFactura() {
     contractDate: '',
     pinfPhis: '',
     fullName: '',
-    organizationName: '',
-    vatPayer: '',
+    organizationName1: '',
+    organizationName2: '',
+    vatPayer1: '',
+    vatPayer2: '',
     vatPayerStatus: '',
     adress: '',
     region: '',
@@ -29,20 +31,17 @@ export default function FFactura() {
     innPinf: '',
     director: '',
     accountant: '',
-  })
-
-  const [recipients, setRecipients] = useState({
-    region: '',
-    district: '',
-    mobile: '',
-    mobileOffice: '',
-    bank: '',
-    check: '',
-    oked: '',
-    innPinf: '',
-    director: '',
-    accountant: '',
-    adress: ''
+    regionR: '',
+    districtR: '',
+    mobileR: '',
+    mobileOfficeR: '',
+    bankR: '',
+    checkR: '',
+    okedR: '',
+    innPinfR: '',
+    directorR: '',
+    accountantR: '',
+    adressR: ''
   })
 
   const toggleSvernut = (number) => {
@@ -55,7 +54,7 @@ export default function FFactura() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("formData =>", formData, recipients);
+    console.log("formData =>", formData);
   };
 
   const handleInputChange = (e, fieldName) => {
@@ -128,8 +127,8 @@ export default function FFactura() {
                 <label className="form-check-label" htmlFor="sellerTypePharm">Фарм</label>
               </div>
               {renderInput2('№ договора', formData.contractNumber, handleInputChange, 'contractNumber')}
-              {renderInput2('Плательщик НДС+ (сертификат активный)', formData.vatPayer, handleInputChange, 'vatPayer')}
-              {renderInput1('Наименование', formData.organizationName, handleInputChange, 'organizationName')}
+              {renderInput2('Плательщик НДС+ (сертификат активный)', formData.vatPayer1, handleInputChange, 'vatPayer1')}
+              {renderInput1('Наименование', formData.organizationName1, handleInputChange, 'organizationName1')}
             </>),
             renderColumn(6, <>
               <p className='doc-element-title mt-4'>Покупатель</p>
@@ -138,8 +137,8 @@ export default function FFactura() {
                 <label className="form-check-label" htmlFor="buyerTypeGuarantor">Поручитель</label>
               </div>
               {renderInput2('№ договора', formData.contractNumber, handleInputChange, 'contractNumber')}
-              {renderInput2('Статус плательщика НДС', formData.vatPayer, handleInputChange, 'vatPayer')}
-              {renderInput1('Наименование', formData.organizationName, handleInputChange, 'organizationName')}
+              {renderInput2('Статус плательщика НДС', formData.vatPayer2, handleInputChange, 'vatPayer2')}
+              {renderInput1('Наименование', formData.organizationName2, handleInputChange, 'organizationName2')}
               <select className='mt-3 input-animation' name="" id="">
                 <option value="" disabled selected>Подразделение</option>
                 <option value="">1</option>
@@ -170,17 +169,17 @@ export default function FFactura() {
             ]),
             renderRow3([
               renderColumnNoSize(<p className='doc-element-title px-1'>Покупатель </p>),
-              renderColumnNoSize(renderInput1('Регион', recipients.region, handleInputChange, 'region')),
-              renderColumnNoSize(renderInput1('Район', recipients.district, handleInputChange, 'district')),
-              renderColumnNoSize(renderInput1('Адрес', recipients.adress, handleInputChange, 'adress')),
-              renderColumnNoSize(renderInput2('Мобильный', recipients.mobile, handleInputChange, 'mobile')),
-              renderColumnNoSize(renderInput2('Мобильный', recipients.mobileOffice, handleInputChange, 'mobileOffice')),
-              renderColumnNoSize(renderInput1('Банк', recipients.bank, handleInputChange, 'bank')),
-              renderColumnNoSize(renderInput2('Счет', recipients.check, handleInputChange, 'check')),
-              renderColumnNoSize(renderInput1('ОКЭД', recipients.oked, handleInputChange, 'oked')),
-              renderColumnNoSize(renderInput1('Код плательщика НДС', recipients.innPinf, handleInputChange, 'innPinf')),
-              renderColumnNoSize(renderInput1('Директор', recipients.director, handleInputChange, 'director')),
-              renderColumnNoSize(renderInput1('гл. Бухгалтер', recipients.accountant, handleInputChange, 'accountant'))
+              renderColumnNoSize(renderInput1('Регион', formData.regionR, handleInputChange, 'regionR')),
+              renderColumnNoSize(renderInput1('Район', formData.districtR, handleInputChange, 'districtR')),
+              renderColumnNoSize(renderInput1('Адрес', formData.adressR, handleInputChange, 'adressR')),
+              renderColumnNoSize(renderInput2('Мобильный', formData.mobileR, handleInputChange, 'mobileR')),
+              renderColumnNoSize(renderInput2('Мобильный', formData.mobileOfficeR, handleInputChange, 'mobileOfficeR')),
+              renderColumnNoSize(renderInput1('Банк', formData.bankR, handleInputChange, 'bankR')),
+              renderColumnNoSize(renderInput2('Счет', formData.checkR, handleInputChange, 'checkR')),
+              renderColumnNoSize(renderInput1('ОКЭД', formData.okedR, handleInputChange, 'okedR')),
+              renderColumnNoSize(renderInput1('Код плательщика НДС', formData.innPinfR, handleInputChange, 'innPinfR')),
+              renderColumnNoSize(renderInput1('Директор', formData.directorR, handleInputChange, 'directorR')),
+              renderColumnNoSize(renderInput1('гл. Бухгалтер', formData.accountantR, handleInputChange, 'accountantR'))
             ])
           ])}
           <div className="col-12 mt-3 d-flex justify-content-between">

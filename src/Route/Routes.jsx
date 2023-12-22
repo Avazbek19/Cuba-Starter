@@ -15,6 +15,7 @@ import PDFview from '../Components/PDF/PDFview';
 
 // //Document Creator
 import DocCreate from '../Components/DocCreate/DocCreate';
+import CreatedDoc from '../Components/CreatedDoc/CreatedDoc';
 
 
 export const routes = [
@@ -30,5 +31,6 @@ export const routes = [
 
   { path: `${process.env.PUBLIC_URL}/pdf/informations/:layout`, Component: <PDFview /> },
 
-  { path: `${process.env.PUBLIC_URL}/pdf/document-creator/:layout`, Component: <DocCreate /> }
+  { path: `${process.env.PUBLIC_URL}/pdf/document-creator/:layout`, Component: <DocCreate /> },
+  { path: `${process.env.PUBLIC_URL}/pdf/created-documents/:layout`, Component: <CreatedDoc /> }
 ];

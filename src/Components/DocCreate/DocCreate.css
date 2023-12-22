@@ -119,15 +119,3 @@
 .required {
     border: 1px solid red; /* You can adjust the styling as needed */
 }
-
-/* @media screen and (max-width: 600px) {
-    .doubled-input {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 601px) {
-    .doubled-input {
-        width: calc(100% / 2 - 20px);
-    }
-} */
