@@ -11,7 +11,6 @@ import Footer from './Footer';
 import CustomizerContext from '../_helper/Customizer';
 import AnimationThemeContext from '../_helper/AnimationTheme';
 import ConfigDB from '../Config/ThemeConfig';
-import Loader from './Loader';
 
 const AppLayout = ({ children, classNames, ...rest }) => {
   const { layout } = useContext(CustomizerContext);
@@ -25,7 +24,6 @@ const AppLayout = ({ children, classNames, ...rest }) => {
 
   return (
     <Fragment>
-      {/* <Loader /> */}
       <Taptop />
       <div className={`page-wrapper ${layout1}`} sidebar-layout={sideBarIcon} id='pageWrapper'>
         <Header />

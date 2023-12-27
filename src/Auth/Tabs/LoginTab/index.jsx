@@ -1,8 +1,6 @@
 import React, { Fragment, useState, useEffect, useContext } from 'react';
 import { Form, FormGroup, Input, Label } from 'reactstrap';
 import { Btn, H4, P } from '../../../AbstractElements';
-import { EmailAddress, ForgotPassword, LoginWithJWT, Password, RememberPassword, SignIn } from '../../../Constant';
-
 import { useNavigate } from 'react-router-dom';
 import { Jwt_token } from '../../../Config/Config';
 import { handleResponse } from '../../../Services/fack.backend';
@@ -61,11 +59,11 @@ const LoginTab = ({ selected }) => {
         <H4>{selected === 'simpleLogin' ? 'Sign In With Simple Login' : 'Sign In With Jwt'}</H4>
         <P>{'Enter your email & password to login'}</P>
         <FormGroup>
-          <Label className='col-form-label'>{EmailAddress}</Label>
+          <Label className='col-form-label'>EmailAddress</Label>
           <Input className='form-control' type='email' onChange={(e) => setEmail(e.target.value)} value={email} />
         </FormGroup>
         <FormGroup className='position-relative'>
-          <Label className='col-form-label'>{Password}</Label>
+          <Label className='col-form-label'>Password</Label>
           <div className='position-relative'>
             <Input className='form-control' type={togglePassword ? 'text' : 'password'} onChange={(e) => setPassword(e.target.value)} value={password} />
             <div className='show-hide' onClick={() => setTogglePassword(!togglePassword)}>
@@ -77,16 +75,16 @@ const LoginTab = ({ selected }) => {
           <div className='checkbox'>
             <Input id='checkbox1' type='checkbox' />
             <Label className='text-muted' for='checkbox1'>
-              {RememberPassword}
+              RememberPassword
             </Label>
           </div>
           <a className='link' href='#javascript'>
-            {ForgotPassword}
+            ForgotPassword
           </a>
           {selected === 'simpleLogin' ? (
-            <Btn attrBtn={{ color: 'primary', className: 'd-block w-100 mt-2', onClick: (e) => loginAuth(e) }}>{SignIn}</Btn>
+            <Btn attrBtn={{ color: 'primary', className: 'd-block w-100 mt-2', onClick: (e) => loginAuth(e) }}>SignIn</Btn>
           ) : (
-            <Btn attrBtn={{ color: 'primary', className: 'd-block w-100 mt-2', onClick: (e) => loginWithJwt(e) }}>{LoginWithJWT}</Btn>
+            <Btn attrBtn={{ color: 'primary', className: 'd-block w-100 mt-2', onClick: (e) => loginWithJwt(e) }}>LoginWithJWT</Btn>
           )}
         </div>
         <OtherWay />

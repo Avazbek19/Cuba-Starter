@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { Container, Modal, ModalBody, ModalHeader, ModalFooter, Row, Button } from 'reactstrap';
 import { Btn, P } from '../../AbstractElements';
-import { Configuration, CopyText, Cancel } from '../../Constant';
 import { ConfigDB } from '../../Config/ThemeConfig';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toast } from 'react-toastify';
@@ -11,7 +10,7 @@ const ConfigurationClass = ({ toggle, modal }) => {
   return (
     <Fragment>
       <Modal isOpen={modal} toggle={toggle} className='modal-body' centered={true}>
-        <ModalHeader toggle={toggle}>{Configuration}</ModalHeader>
+        <ModalHeader toggle={toggle}>Configuration</ModalHeader>
         <ModalBody>
           <Container fluid={true} className='bd-example-row'>
             <Row>
@@ -80,10 +79,10 @@ const ConfigurationClass = ({ toggle, modal }) => {
                   position: toast.POSITION.BOTTOM_RIGHT,
                 })
               }>
-              {CopyText}
+              CopyText
             </Button>
           </CopyToClipboard>
-          <Btn attrBtn={{ color: 'secondary', onClick: toggle }}>{Cancel}</Btn>
+          <Btn attrBtn={{ color: 'secondary', onClick: toggle }}>Cancel</Btn>
         </ModalFooter>
       </Modal>
     </Fragment>

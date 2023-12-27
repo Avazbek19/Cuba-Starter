@@ -32,5 +32,5 @@ export const routes = [
   { path: `${process.env.PUBLIC_URL}/pdf/informations/:layout`, Component: <PDFview /> },
 
   { path: `${process.env.PUBLIC_URL}/pdf/document-creator/:layout`, Component: <DocCreate /> },
-  { path: `${process.env.PUBLIC_URL}/pdf/created-documents/:layout`, Component: <CreatedDoc /> }
+  { path: `${process.env.PUBLIC_URL}/pdf/created-documents/:layout`, Component: <CreatedDoc /> },
 ];

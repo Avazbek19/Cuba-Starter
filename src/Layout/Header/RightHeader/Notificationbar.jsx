@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import SvgIcon from '../../../Components/Common/Component/SvgIcon';
-import { CHECKALL, DeliveryComplete, DeliveryProcessing, Notification, OrderComplete, TicketsGenerated } from '../../../Constant';
 
 const Notificationbar = () => {
   const [notificationDropDown, setNotificationDropDown] = useState(false);
@@ -16,30 +15,30 @@ const Notificationbar = () => {
         <ul>
           <li className='b-l-primary border-4'>
             <p>
-              {DeliveryProcessing} <span className='font-danger'>{'10 min.'}</span>
+              DeliveryProcessing <span className='font-danger'>{'10 min.'}</span>
             </p>
           </li>
           <li className='b-l-success border-4'>
             <p>
-              {OrderComplete}
+              OrderComplete
               <span className='font-success'>{'1 hr'}</span>
             </p>
           </li>
           <li className='b-l-info border-4'>
             <p>
-              {TicketsGenerated}
+              TicketsGenerated
               <span className='font-info'>{'3 hr'}</span>
             </p>
           </li>
           <li className='b-l-warning border-4'>
             <p>
-              {DeliveryComplete}
+              DeliveryComplete
               <span className='font-warning'>{'6 hr'}</span>
             </p>
           </li>
           <li>
             <a className='f-w-700' href='#javascript'>
-              {CHECKALL}
+            CHECKALL
             </a>
           </li>
         </ul>

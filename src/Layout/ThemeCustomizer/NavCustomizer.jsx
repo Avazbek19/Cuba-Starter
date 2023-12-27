@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import { Nav, NavItem, NavLink } from 'reactstrap';
-import { BuyNow, CheckFeatures, Document, QuickOption, Support } from '../../Constant';
 
 const NavCustomizer = ({ callbackNav, selected }) => {
   return (
@@ -11,7 +10,7 @@ const NavCustomizer = ({ callbackNav, selected }) => {
             <div className='settings'>
               <i className='icon-paint-bucket'></i>
             </div>
-            <span>{QuickOption}</span>
+            <span>QuickOption</span>
           </NavLink>
         </NavItem>
         <NavItem>
@@ -19,32 +18,32 @@ const NavCustomizer = ({ callbackNav, selected }) => {
             <div className='settings'>
               <i className='icon-settings'></i>
             </div>
-            <span>{QuickOption}</span>
+            <span>QuickOption</span>
           </NavLink>
         </NavItem>
         <a className='nav-link' href='/' target='_blank' rel='noopener noreferrer'>
           <div>
             <i className='icon-support'></i>
           </div>
-          <span>{Support}</span>
+          <span>Support</span>
         </a>
         <a className='nav-link' href='/' target='_blank' rel='noopener noreferrer'>
           <div>
             <i className='icon-settings'></i>
           </div>
-          <span>{Document}</span>
+          <span>Document</span>
         </a>
         <a className='nav-link' href='/' target='_blank' rel='noopener noreferrer'>
           <div>
             <i className='icon-panel'></i>
           </div>
-          <span>{CheckFeatures}</span>
+          <span>CheckFeatures</span>
         </a>
         <a className='nav-link' href='/' target='_blank' rel='noopener noreferrer'>
           <div>
             <i className='icon-shopping-cart-full'></i>
           </div>
-          <span>{BuyNow}</span>
+          <span>BuyNow</span>
         </a>
       </Nav>
     </Fragment>

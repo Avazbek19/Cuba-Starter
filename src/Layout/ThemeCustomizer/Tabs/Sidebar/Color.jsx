@@ -2,7 +2,6 @@ import React, { useContext, Fragment, useState, useEffect } from 'react';
 import { Input } from 'reactstrap';
 import { Btn, H6, UL } from '../../../../AbstractElements';
 import ConfigDB from '../../../../Config/ThemeConfig';
-import { Apply, UnlimitedColor } from '../../../../Constant';
 import CustomizerContext from '../../../../_helper/Customizer';
 
 const ColorsComponent = () => {
@@ -41,7 +40,7 @@ const ColorsComponent = () => {
 
   return (
     <Fragment>
-      <H6>{UnlimitedColor}</H6>
+      <H6>UnlimitedColor</H6>
       <UL attrUL={{ className: 'simple-list flex-row layout-grid unlimited-color-layout' }}>
         <Input className='p-0' type='color' name='Color-Background1' value={colorBackground1} onChange={(e) => handleUnlimatedColor1Change(e)} />
         <Input className='p-0' type='color' name='Color-Background2' value={colorBackground2} onChange={(e) => handleUnlimatedColor2Change(e)} />
@@ -52,7 +51,7 @@ const ColorsComponent = () => {
             onClick: OnUnlimatedColorClick,
           }}>
           {' '}
-          {Apply}
+          Apply
         </Btn>
       </UL>
     </Fragment>

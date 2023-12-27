@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useContext } from 'react';
 import { H6, LI, UL } from '../../../../AbstractElements';
 import ConfigDB from '../../../../Config/ThemeConfig';
-import { MixLayout } from '../../../../Constant';
 import CustomizerContext from '../../../../_helper/Customizer';
 import CommenUL from '../Sidebar/CommenUL';
 
@@ -37,7 +36,7 @@ const MixLayoutComponent = () => {
   };
   return (
     <Fragment>
-      <H6 className=''>{MixLayout}</H6>
+      <H6 className=''>MixLayout</H6>
       <UL attrUL={{ className: 'layout-grid customizer-mix flex-row' }}>
         <LI
           attrLI={{

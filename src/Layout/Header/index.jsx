@@ -6,7 +6,6 @@ import CustomContext from '../../_helper/Customizer';
 import RightHeader from './RightHeader/index';
 import Leftbar from './Leftbar/index'
 import { MENUITEMS } from '../Sidebar/Menu';
-import { Loading } from '../../Constant';
 import SvgIcon from '../../Components/Common/Component/SvgIcon';
 
 const Header = () => {
@@ -110,7 +109,7 @@ const Header = () => {
                 <div className='u-posRelative'>
                   <input className='Typeahead-input form-control-plaintext w-100' id='demo-input' type='search' placeholder='Search Cuba ..' defaultValue={searchValue} onChange={(e) => handleSearchKeyword(e.target.value)} />
                   <div className='spinner-border Typeahead-spinner' role='status'>
-                    <span className='sr-only'>{Loading}</span>
+                    <span className='sr-only'>Loading</span>
                   </div>
                   <X className='close-search' onClick={() => document.querySelector('.search-full').classList.remove('open')} />
                 </div>

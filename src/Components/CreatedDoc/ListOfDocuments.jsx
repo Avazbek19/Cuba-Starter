@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { Col, Card, CardHeader, Table } from 'reactstrap';
+import { Col, Card, Table } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function ListOfDocuments() {
   const [savedData, setSavedData] = useState([]);
+  const navigate = useNavigate();
 
   const timeFormatter = (timestamp) => {
     const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', timeZone: 'Asia/Tashkent', year: 'numeric', month: 'numeric', day: 'numeric' };
     return new Date(timestamp).toLocaleString('uz-UZ', options);
+  }
+
+  function send(item) {
+    navigate(`/info-document/${item.formData.fileName}-${item.formData.contractNumber}`, {
+      state: item
+    });
   }
 
   useEffect(() => {
@@ -38,7 +46,7 @@ export default function ListOfDocuments() {
             </thead>
             <tbody>
               {savedData.map((item, index) => (
-                <tr key={index}>
+                <tr key={index} onClick={() => send(item)}>
                   <th scope='row'>{index + 1}</th>
                   <td>{item.formData.fileName} {item.formData.documentNumber}</td>
                   <td>{item.formData.buyerName}</td>

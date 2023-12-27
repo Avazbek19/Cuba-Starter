@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { English, Russian } from '../../../Constant';
 
 const Language = () => {
   const [langdropdown, setLangdropdown] = useState(false);
@@ -37,7 +36,7 @@ const Language = () => {
             </span>
           </div>
           <div className='lang' onClick={() => changeLanguage('ru')}>
-          <i className='flag-icon flag-icon-ru'></i>
+            <i className='flag-icon flag-icon-ru'></i>
             <span className='lang-txt'>
               Russian
               <span> {'(RU)'}</span>
